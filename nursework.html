@@ -1,0 +1,652 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="theme-color" content="#4a35c4"><link rel="manifest" href="data:application/manifest+json,%7B%22name%22%3A%20%22NurseWork%20Pro%22%2C%20%22short_name%22%3A%20%22NurseWork%22%2C%20%22start_url%22%3A%20%22.%22%2C%20%22display%22%3A%20%22standalone%22%2C%20%22background_color%22%3A%20%22%23f2f8fa%22%2C%20%22theme_color%22%3A%20%22%23087e8b%22%2C%20%22icons%22%3A%20%5B%7B%22src%22%3A%20%22data%3Aimage/svg%2Bxml%2C%253Csvg%2520xmlns%253D%2527http%253A//www.w3.org/2000/svg%2527%2520viewBox%253D%25270%25200%2520512%2520512%2527%253E%253Crect%2520width%253D%2527512%2527%2520height%253D%2527512%2527%2520rx%253D%2527110%2527%2520fill%253D%2527%2523087e8b%2527/%253E%253Ctext%2520x%253D%2527256%2527%2520y%253D%2527350%2527%2520font-size%253D%2527280%2527%2520text-anchor%253D%2527middle%2527%253E%25F0%259F%25A9%25BA%253C/text%253E%253C/svg%253E%22%2C%20%22sizes%22%3A%20%22512x512%22%2C%20%22type%22%3A%20%22image/svg%2Bxml%22%2C%20%22purpose%22%3A%20%22any%22%7D%5D%7D"><link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20512%20512%27%3E%3Crect%20width%3D%27512%27%20height%3D%27512%27%20rx%3D%27110%27%20fill%3D%27%23087e8b%27/%3E%3Ctext%20x%3D%27256%27%20y%3D%27350%27%20font-size%3D%27280%27%20text-anchor%3D%27middle%27%3E%F0%9F%A9%BA%3C/text%3E%3C/svg%3E"><link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20512%20512%27%3E%3Crect%20width%3D%27512%27%20height%3D%27512%27%20rx%3D%27110%27%20fill%3D%27%23087e8b%27/%3E%3Ctext%20x%3D%27256%27%20y%3D%27350%27%20font-size%3D%27280%27%20text-anchor%3D%27middle%27%3E%F0%9F%A9%BA%3C/text%3E%3C/svg%3E"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><title>NurseWork Pro</title>
+<style>
+:root{--teal:#087e8b;--teal2:#0fa3a0;--navy:#123b56;--bg:#f2f8fa;--card:#fff;--muted:#6c8390;--line:#e1edf0;--mint:#dff5f1;--blue:#e4f2fb;--red:#c2414b;--shadow:0 6px 22px #123b560d}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--navy);font:15px/1.45 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer;border:0}.app{max-width:520px;margin:auto;min-height:100vh;padding-bottom:86px}.top{padding:18px 18px 14px;background:linear-gradient(135deg,#087e8b,#0d9d9a);color:white;border-radius:0 0 25px 25px}.brand{display:flex;align-items:center;gap:11px}.logo{width:48px;height:48px;border-radius:16px;background:#ffffff25;display:grid;place-items:center;font-size:26px;border:1px solid #ffffff55}.brand h1{font-size:19px;margin:0;letter-spacing:.2px}.brand small{opacity:.86}.toprow{display:flex;justify-content:space-between;align-items:center;margin-top:22px;gap:10px}.toprow h2{font-size:23px;margin:0}.pill{border-radius:99px;background:#ffffff25;padding:7px 11px;font-size:12px}.content{padding:16px}.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:15px;margin-bottom:13px;box-shadow:var(--shadow)}.card h3{margin:0 0 10px;font-size:16px}.muted{color:var(--muted);font-size:12px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.metric{background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px}.metric .ico{font-size:21px}.metric strong{display:block;font-size:22px;margin:4px 0 0}.metric span{font-size:12px;color:var(--muted)}.btn{padding:12px 15px;border-radius:13px;font-weight:650;background:var(--teal);color:#fff}.btn.secondary{background:var(--mint);color:var(--teal)}.btn.ghost{background:#f0f6f8;color:var(--navy)}.btn.danger{background:#fff0f0;color:var(--red)}.btn.full{width:100%}.row{display:flex;align-items:center;justify-content:space-between;gap:10px}.field{margin:10px 0}.field label{display:block;font-size:12px;font-weight:650;color:var(--muted);margin-bottom:5px}.field input,.field select,.field textarea{width:100%;padding:11px 12px;border:1px solid #d7e5e9;border-radius:11px;background:white;color:var(--navy);outline-color:var(--teal)}.field textarea{min-height:70px}.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}.service{display:grid;grid-template-columns:1fr 72px 78px;gap:8px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line)}.service:last-child{border:0}.service input{width:100%;min-width:0;border:1px solid var(--line);border-radius:9px;padding:8px}.service small{display:block;color:var(--muted);font-size:11px}.tabs{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(520px,100%);display:grid;grid-template-columns:repeat(5,1fr);padding:8px 4px calc(8px + env(safe-area-inset-bottom));background:#ffffffed;backdrop-filter:blur(12px);border-top:1px solid var(--line);z-index:10}.tab{background:transparent;color:var(--muted);font-size:10px;padding:4px 1px}.tab b{display:block;font-size:20px;font-weight:500}.tab.active{color:var(--teal);font-weight:750}.hidden{display:none!important}.notice{padding:11px;border-radius:12px;background:#fff8df;color:#79591b;font-size:12px}.listrow{padding:11px 0;border-bottom:1px solid var(--line)}.listrow:last-child{border:0}.switch{appearance:none;width:44px;height:26px;background:#cbd5dc;border-radius:99px;position:relative;flex-shrink:0;cursor:pointer}.switch:checked{background:var(--teal)}.switch:before{content:"";position:absolute;width:20px;height:20px;background:#fff;border-radius:50%;left:3px;top:3px;transition:.15s;box-shadow:0 1px 3px #0002}.switch:checked:before{left:21px}.splash{position:fixed;inset:0;z-index:30;background:linear-gradient(155deg,#eaf8f8,#fff 55%,#e7f3fb);display:flex;align-items:center;justify-content:center;text-align:center;padding:28px}.splashinner{max-width:390px;width:100%;position:relative}.welcome-art{width:100%;max-width:350px;height:auto;display:block;margin:-10px auto 2px;filter:drop-shadow(0 14px 18px #145a6b16)}.welcome-kicker{display:inline-flex;align-items:center;gap:7px;padding:7px 12px;border-radius:999px;background:#e2f6f2;color:#087e8b;font-size:11px;font-weight:800;letter-spacing:1.3px;margin:0 auto 9px}.welcome-sub{max-width:290px;margin:8px auto 0!important;font-size:14px;line-height:1.55}.splash .credit{background:#ffffffb8;border:1px solid #dcecef;border-radius:18px;padding:13px 10px;margin:19px auto 0;max-width:320px}.splash .credit strong{font-size:17px}.splash .btn{box-shadow:0 8px 18px #087e8b2c;padding:14px}.splash h1{letter-spacing:-.7px}.brand-mark{display:grid;place-items:center;width:48px;height:48px;border-radius:16px;background:#ffffff25;border:1px solid #ffffff55}.biglogo{margin:auto auto 18px;width:106px;height:106px;border-radius:32px;background:linear-gradient(145deg,#087e8b,#12aaa3);color:white;display:grid;place-items:center;font-size:52px;box-shadow:0 15px 35px #087e8b35}.splash h1{font-size:30px;color:#07566c;margin:0}.splash p{color:#597987}.splash .credit{margin-top:45px;padding-top:20px;border-top:1px solid #d8e8eb}.splash .credit strong{display:block;font-size:19px;color:#07566c}.splash .credit small{display:block;color:#587985;margin-top:4px}.splash .btn{margin-top:22px;width:100%}.modal{position:fixed;inset:0;background:#0a273b80;display:flex;align-items:center;justify-content:center;padding:20px;z-index:40}.modalbox{width:100%;max-width:390px;background:white;border-radius:22px;padding:22px;max-height:90vh;overflow:auto}.empty{text-align:center;color:var(--muted);padding:20px 4px}.smallbtn{padding:7px 10px;font-size:12px;border-radius:9px;background:#e6f5f4;color:var(--teal)}.chip{display:inline-block;padding:5px 9px;border-radius:8px;background:#edf6f8;color:#246477;font-size:12px;margin:3px 4px 3px 0}
+
+/* ===== v2 look ===== */
+body{background:radial-gradient(900px 380px at 50% -120px,#d3f0ee,transparent 70%),var(--bg)}
+.top{position:relative;overflow:hidden;padding:22px 20px 24px;border-radius:0 0 34px 34px;background:linear-gradient(140deg,#06606e,#0a8f94 60%,#14b3a6);box-shadow:0 12px 30px #087e8b33}
+.top:before,.top:after{content:"";position:absolute;border-radius:50%;background:#ffffff12}
+.top:before{width:190px;height:190px;right:-60px;top:-70px}.top:after{width:120px;height:120px;right:50px;bottom:-70px}
+.top>*{position:relative;z-index:1}.toprow h2{font-size:26px;letter-spacing:-.4px}.brand h1{font-size:18px}
+.card{border-radius:22px;border-color:#e3eef1;box-shadow:0 10px 28px #123b5610}
+.card h3{font-size:16.5px;letter-spacing:-.1px}
+.metric{border-radius:20px;box-shadow:0 8px 20px #123b560a}
+.metric .ico{width:40px;height:40px;border-radius:13px;display:grid;place-items:center;background:var(--mint);margin-bottom:6px}
+.grid>.metric:nth-child(2) .ico{background:#fff1d6}.grid>.metric:nth-child(3) .ico{background:var(--blue)}.grid>.metric:nth-child(4) .ico{background:#fde5ea}
+.metric strong{font-size:24px;letter-spacing:-.5px}
+.btn{background:linear-gradient(135deg,#087e8b,#0fa3a0);box-shadow:0 6px 14px #087e8b30;transition:transform .12s}.btn:active{transform:scale(.97)}
+.btn.secondary,.btn.ghost,.btn.danger{background:var(--mint);box-shadow:none}.btn.ghost{background:#eef5f8}.btn.danger{background:#fff0f0}
+.tabs{bottom:10px;width:min(496px,calc(100% - 20px));border:1px solid var(--line);border-radius:26px;box-shadow:0 14px 34px #123b5624;padding:7px 6px calc(7px + env(safe-area-inset-bottom))}
+.tab{border-radius:18px;padding:6px 1px;transition:background .15s}.tab.active{background:var(--mint)}
+.app{padding-bottom:104px}
+.timer{font-size:30px;font-weight:800;letter-spacing:-.5px;color:var(--teal);margin-top:6px}
+.bar{height:11px;border-radius:99px;background:var(--mint);overflow:hidden;margin-top:10px}.bar i{display:block;height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,#0fa3a0,#f5b94a);transition:width .5s}
+.week{display:flex;align-items:flex-end;justify-content:space-between;gap:6px;height:112px;margin-top:8px}
+.wk{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:3px;font-size:11px;color:var(--muted)}
+.wk i{width:100%;max-width:30px;border-radius:9px 9px 5px 5px;background:#bfe6e4}.wk i.now{background:linear-gradient(180deg,#0fa3a0,#087e8b)}
+.drops{display:flex;gap:4px;margin:8px 0;flex-wrap:wrap}.drops b{font-size:21px;font-weight:400;opacity:.22;filter:grayscale(1);transition:.2s}.drops b.on{opacity:1;filter:none}
+:root{--teal:#0d5ca3;--teal2:#1b86c9;--navy:#12304d;--bg:#eef5fb;--mint:#e1f0fa;--blue:#e4f2fb;--p1:#e4f1fb;--p2:#fff4d9;--p3:#ece8fb;--p4:#fde6ec}
+.top{background:linear-gradient(140deg,#09386f,#0d5ca3 58%,#1b86c9);box-shadow:0 12px 30px #0d5ca333}
+.btn{background:linear-gradient(135deg,#0c4f93,#1b86c9);box-shadow:0 6px 14px #0d5ca333}.btn.secondary{background:var(--mint)}.btn.ghost{background:#eef3f8}.btn.danger{background:#fff0f0}
+.wk i.now{background:linear-gradient(180deg,#1b86c9,#0d5ca3)}.wk i{background:#c4def2}
+.metric.p1{background:var(--p1)}.metric.p2{background:var(--p2)}.metric.p3{background:var(--p3)}.metric.p4{background:var(--p4)}
+.metric[class*=" p"] .ico{background:#ffffff99}
+.toprow{align-items:center}.pill{display:inline-block;margin-top:8px}.mascot{width:80px;height:80px;border-radius:50%;border:3px solid #ffffffd0;object-fit:cover;box-shadow:0 8px 18px #0005}
+.logo{color:#fff}.logo svg{width:34px;height:34px}
+.tab:not(.active) b{filter:grayscale(1);opacity:.55}.tab b{font-size:21px}
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.tiles button{background:var(--mint);color:var(--navy);border-radius:16px;padding:10px 2px;font-size:11px;font-weight:650}.tiles i{display:block;font-style:normal;font-size:23px;margin-bottom:3px}
+.quote{background:linear-gradient(135deg,#fbf3ea,#f6e7d6);border-color:#efdcc6}.quote p{margin:6px 0 0;font:italic 17px/1.5 Georgia,serif;color:#5a3b2a}.quote .muted{color:#9a7a62}
+.svc{display:flex;align-items:center;gap:10px}.sico{width:38px;height:38px;border-radius:12px;background:var(--mint);display:grid;place-items:center;font-size:19px;flex-shrink:0}
+/* splash */
+.splash{background:linear-gradient(180deg,#e6f3fc,#fff 56%,#e2eff9);overflow:auto}.splashinner{margin:auto;padding:8px 0}
+.sp-logo{width:92px;height:92px;margin:0 auto;border-radius:50%;background:#fff;color:#0d5ca3;display:grid;place-items:center;box-shadow:0 14px 30px #0d5ca32e}.sp-logo svg{width:62px;height:62px}
+.splash h1{font-size:33px;letter-spacing:-.9px;color:#0d4f8b;margin:12px 0 4px}.sp-sub{font-weight:700;color:#0d5ca3;font-size:15px;max-width:270px;margin:0 auto}
+.sp-tag{margin:12px 0 14px;color:#34607f;font-weight:650;line-height:1.75}
+.splash .welcome-art{margin:0 auto;border-radius:26px;box-shadow:0 18px 38px #0d4f8b22}.splash .credit{margin-top:16px!important;padding-top:14px!important}
+/* dark mode */
+[data-theme=dark]{--bg:#0b1820;--card:#12262f;--navy:#e4f2f5;--muted:#8fa9b4;--line:#21404c;--mint:#13403f;--blue:#143647;--shadow:0 6px 22px #0006}
+[data-theme=dark] body{background:var(--bg)}
+[data-theme=dark] .metric,[data-theme=dark] .modalbox{background:var(--card)}
+[data-theme=dark] .field input,[data-theme=dark] .field select,[data-theme=dark] .field textarea,[data-theme=dark] .service input,[data-theme=dark] #goalInput{background:#0e1f27;color:var(--navy);border-color:var(--line)}
+[data-theme=dark] .tabs{background:#12262fee}[data-theme=dark] .card,[data-theme=dark] .metric{border-color:var(--line)}
+[data-theme=dark] .btn.secondary,[data-theme=dark] .smallbtn{background:#174744;color:#6fe6dc}[data-theme=dark] .btn.ghost{background:#1b3340}[data-theme=dark] .btn.danger{background:#3a1d24;color:#ff9aa4}
+[data-theme=dark] .chip{background:#173540;color:#9fd6df}[data-theme=dark] .wk i{background:#2a5a5c}[data-theme=dark] .wk i.now{background:#14b3a6}
+.themebtn{margin-left:auto;width:44px;height:44px;border-radius:15px;background:#ffffff26;border:1px solid #ffffff59;color:#fff;font-size:21px;display:grid;place-items:center}
+.themebtn:active{transform:scale(.92)}
+[data-theme=dark]{--p1:#173a54;--p2:#463b1d;--p3:#2c2a50;--p4:#472430;--bg:#0b1820}[data-theme=dark] .quote{background:#2a2118;border-color:#3d3022}[data-theme=dark] .quote p{color:#f0dcc6}[data-theme=dark] .tiles button{background:#17364a}[data-theme=dark] .wk i{background:#2a4f6e}[data-theme=dark] .metric[class*=" p"] .ico{background:#ffffff1c}
+.tiles{grid-template-columns:repeat(5,1fr);gap:6px}.tiles button{font-size:10px}
+.gboard{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}.gc{aspect-ratio:1;border-radius:16px;font-size:30px;color:#fff;background:linear-gradient(135deg,#0c4f93,#1b86c9);box-shadow:0 5px 12px #0d5ca333;transition:transform .15s}.gc:active{transform:scale(.94)}.gc.up{background:var(--mint);color:var(--navy);box-shadow:none}
+[data-theme=dark] .gc.up{background:#17364a}
+.sp-logo{width:auto;height:auto;background:none;box-shadow:none;border-radius:0}.sp-logo img{width:150px;display:block;margin:0 auto;mix-blend-mode:multiply}
+.hero{max-width:350px;margin:0 auto;border-radius:26px;overflow:hidden;box-shadow:0 18px 38px #0d4f8b24}.hero img{width:100%;display:block}
+/* new-gen splash */
+#splash{background:radial-gradient(120% 80% at 15% 0%,#4a35c4,transparent 60%),radial-gradient(100% 70% at 100% 100%,#0e8fc4,transparent 60%),linear-gradient(160deg,#1b2a80,#0b4a8f 55%,#0a7ea4);overflow:auto;isolation:isolate}
+.blob{position:absolute;border-radius:50%;filter:blur(46px);opacity:.7;z-index:-1;animation:drift 14s ease-in-out infinite alternate}
+.b1{width:260px;height:260px;background:#ff4f9a;top:-70px;right:-80px}.b2{width:230px;height:230px;background:#22d3ee;bottom:-60px;left:-70px;animation-delay:-5s}.b3{width:180px;height:180px;background:#ffb347;top:46%;left:-100px;opacity:.45;animation-delay:-9s}
+@keyframes drift{to{transform:translate(30px,-26px) scale(1.12)}}
+.fl{position:absolute;font-size:26px;z-index:-1;animation:bob 5s ease-in-out infinite alternate;filter:drop-shadow(0 6px 10px #0005)}
+.f1{top:6%;left:9%}.f2{top:13%;right:10%;animation-delay:-1s}.f3{top:40%;left:5%;animation-delay:-2s}.f4{top:48%;right:6%;animation-delay:-3s}.f5{bottom:20%;left:10%;animation-delay:-1.5s}.f6{bottom:15%;right:10%;animation-delay:-2.5s}
+@keyframes bob{to{transform:translateY(-14px) rotate(8deg)}}
+#splash .sp-logo{width:116px;height:116px;border-radius:50%;background:#fff;display:grid;place-items:center;margin:0 auto;overflow:hidden;box-shadow:0 0 0 8px #ffffff2e,0 18px 40px #0007}#splash .sp-logo img{width:92px;margin:0;mix-blend-mode:multiply}
+#splash h1{color:#fff;font-size:36px;letter-spacing:-1px;margin:16px 0 0;text-shadow:0 4px 20px #0006}
+.ecg{width:240px;height:34px;display:block;margin:0 auto 8px;overflow:visible}.ecg path{fill:none;stroke:url(#eg);stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;animation:ecg 3.6s ease-in-out infinite}
+@keyframes ecg{0%{stroke-dashoffset:1}55%,100%{stroke-dashoffset:0}}
+#splash .sp-sub{color:#dff1ff;font-weight:700;font-size:15px;max-width:280px;margin:0 auto}
+.pills{display:flex;flex-direction:column;gap:9px;margin:20px auto 0;max-width:290px}.pills span{background:#ffffff1f;border:1px solid #ffffff44;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-radius:16px;padding:11px 14px;color:#fff;font-weight:700;text-align:left}
+#splash .credit{background:#ffffff1a;border:1px solid #ffffff3d;-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-radius:20px;max-width:300px;padding:14px 12px}
+#splash .credit small{color:#cfe6fb;display:block}#splash .credit strong{color:#fff;font-size:19px;display:block;margin:2px 0}
+#splash .btn{background:#fff;color:#0d4f8b;font-weight:800;border-radius:18px;padding:15px;box-shadow:0 0 0 6px #ffffff29,0 14px 30px #0006}
+@media (prefers-reduced-motion:reduce){.blob,.fl,.ecg path{animation:none}.ecg path{stroke-dashoffset:0}}
+/* ===== new-gen app theme (matches splash) ===== */
+:root{--teal:#5a3fe0;--teal2:#19c1e0;--navy:#1a2350;--muted:#6b7a99;--line:#e6e2f7;--mint:#ece8ff;--blue:#e2efff;--p1:#e3eeff;--p2:#fff1d6;--p3:#f0e6ff;--p4:#ffe3ee;--shadow:0 10px 28px #2a1f7a1c}
+body{background:radial-gradient(110% 55% at 8% 0%,#5a40d8aa,transparent 60%),radial-gradient(90% 50% at 100% 100%,#14a6d6aa,transparent 60%),linear-gradient(165deg,#1b2a80,#0b4a8f 52%,#0a7ea4) fixed;min-height:100vh}
+.top{background:linear-gradient(135deg,#7a3df0,#2f6fe0 55%,#16b8d6);box-shadow:0 14px 34px #4a35c455}
+.hdr-ecg{position:absolute;left:0;bottom:6px;width:100%;height:26px}.hdr-ecg path{fill:none;stroke:#fff;stroke-opacity:.5;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;animation:ecg 4s ease-in-out infinite}
+.card,.metric{background:#fffffff0;border:1px solid #ffffff80}
+.card h3{font-weight:800}
+#dashboard>.card:first-child{border:2px solid transparent;background:linear-gradient(#fff,#fff) padding-box,linear-gradient(135deg,#ff7ab8,#7a4dff,#19c1e0) border-box}
+.btn{background:linear-gradient(135deg,#7a4dff,#2f7bf0 55%,#19c1e0);box-shadow:0 8px 20px #4a35c44d}
+.btn.secondary{background:var(--mint);color:#4a35c4;box-shadow:none}.btn.ghost{background:#eef1fb;color:var(--navy);box-shadow:none}
+.smallbtn{background:#ece8ff;color:#4a35c4}.chip{background:#efeaff;color:#4a35c4}
+.tabs{background:#ffffffe6;border-color:#ffffff90}.tab.active{background:linear-gradient(135deg,#7a4dff24,#19c1e024);color:#4a35c4}
+.bar{background:#ece8ff}.bar i{background:linear-gradient(90deg,#ff5fa2,#ffb347)}
+.wk i{background:#d9d3fb}.wk i.now{background:linear-gradient(180deg,#ff7ab8,#7a4dff)}
+.gc{background:linear-gradient(135deg,#7a4dff,#19c1e0)}
+.field input,.field select,.field textarea{border-color:#ddd8f3}
+.modal{background:#0a1038b3;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}.modalbox{border-radius:26px}
+#toast{background:linear-gradient(135deg,#5a3fe0,#19a6d6)!important}
+@media (prefers-reduced-motion:reduce){.hdr-ecg path{animation:none;stroke-dashoffset:0}}
+/* dark */
+[data-theme=dark]{--teal:#a99bff;--navy:#e9edff;--muted:#9aa6d4;--line:#2b2f66;--mint:#27245c;--card:#141a45;--p1:#1b2f63;--p2:#4a3d1c;--p3:#30266a;--p4:#4d2442}
+[data-theme=dark] body{background:radial-gradient(110% 55% at 8% 0%,#3a2a9a88,transparent 60%),radial-gradient(90% 50% at 100% 100%,#0a6f9a77,transparent 60%),linear-gradient(165deg,#0a0f2e,#0a2347 55%,#08384f) fixed}
+[data-theme=dark] .card,[data-theme=dark] .metric{background:#141a45ee;border-color:#2b2f66}
+[data-theme=dark] #dashboard>.card:first-child{background:linear-gradient(#141a45,#141a45) padding-box,linear-gradient(135deg,#ff7ab8,#7a4dff,#19c1e0) border-box}
+[data-theme=dark] .tabs{background:#0f1440ee;border-color:#2b2f66}
+[data-theme=dark] .tab.active{color:#c9bfff}
+[data-theme=dark] .field input,[data-theme=dark] .field select,[data-theme=dark] .field textarea,[data-theme=dark] .service input,[data-theme=dark] #goalInput{background:#0d1237;border-color:#2b2f66}
+[data-theme=dark] .btn.secondary,[data-theme=dark] .smallbtn{background:#2a2765;color:#cfc6ff}[data-theme=dark] .btn.ghost{background:#222862;color:var(--navy)}
+[data-theme=dark] .chip{background:#2a2765;color:#cfc6ff}[data-theme=dark] .tiles button{background:#222862}[data-theme=dark] .bar{background:#222862}
+[data-theme=dark] .wk i{background:#3b3a78}[data-theme=dark] .gc.up{background:#222862}[data-theme=dark] .modalbox{background:#141a45}
+/* i18n + features */
+.langbar{display:flex;gap:8px;justify-content:center;margin-bottom:16px}.langbar button{padding:7px 14px;border-radius:99px;background:#ffffff26;border:1px solid #ffffff55;color:#fff;font-weight:700}.langbar button.on{background:#fff;color:#4a35c4}
+.langset{display:flex;gap:8px}.langset button{flex:1;padding:11px;border-radius:13px;background:var(--mint);color:var(--teal);font-weight:700}.langset button.on{background:linear-gradient(135deg,#7a4dff,#19c1e0);color:#fff}
+[data-theme=dark] .langset button{background:#2a2765;color:#cfc6ff}[data-theme=dark] .langset button.on{background:linear-gradient(135deg,#7a4dff,#19c1e0);color:#fff}
+.tiles{grid-template-columns:repeat(4,1fr)}
+[dir=rtl] body{font-family:'Noto Naskh Arabic','Noto Nastaliq Urdu','Segoe UI',system-ui,sans-serif;line-height:1.75}
+[dir=rtl] .pills span{text-align:right}[dir=rtl] [style*="text-align:right"]{text-align:left!important}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute"><symbol id="lg" viewBox="0 0 100 100"><path d="M34 10h32l-4 20H38z" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/><path d="M50 15v10m-5-5h10" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><path d="M24 38c-12 4-12 26 4 34 6 3 12 4 16 3" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><circle cx="24" cy="36" r="3.5" fill="currentColor"/><path d="M60 82c-12-8-16-13-16-18a8 8 0 0 1 16-2 8 8 0 0 1 16 2c0 5-4 10-16 18z" fill="currentColor"/></symbol></svg>
+<div class="app" id="app">
+<header class="top"><div class="brand"><div class="logo"><svg viewBox="0 0 100 100"><use href="#lg"/></svg></div><div><h1>NurseWork Pro</h1><small>Nursing Work, Attendance & Wellness</small></div><button class="themebtn" id="themeBtn" aria-label="Toggle night mode">🌙</button></div><div class="toprow"><div><div class="muted" style="color:#d6ecfa" id="greet">Good Morning ♥</div><h2 id="helloName">Nursing Professional</h2><span class="pill" id="monthPill">This Month</span></div><img class="mascot" alt="" src="data:image/jpeg;base64,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"></div><svg class="hdr-ecg" viewBox="0 0 300 30" aria-hidden="true"><path pathLength="1" d="M0 16h96l8-12 10 26 10-30 10 24 6-8h160"/></svg></header>
+<main class="content">
+<section id="dashboard">
+<div class="card"><div class="row"><div><div class="muted">TODAY'S SHIFT</div><h3 id="todayDate" style="margin:3px 0">Today</h3><div class="muted" id="wardLabel">Ward not set</div></div><span class="pill" id="shiftState" style="background:var(--mint);color:var(--teal)">Not started</span></div><div class="two" style="margin-top:13px"><div class="field" style="margin:0"><label>Ward / Unit</label><select id="dutyWard"></select></div><div class="field" style="margin:0"><label>Shift</label><select id="dutyShift"><option>Day Shift</option><option>Evening Shift</option><option>Night Shift</option></select></div></div><div class="two" style="margin-top:12px"><button class="btn" id="startDuty">▶ Start Duty</button><button class="btn secondary" id="endDuty">■ End Duty</button></div><div class="muted" id="dutyTimes" style="margin-top:10px">Duty In: — · Duty Out: —</div><div class="timer" id="liveTimer">—</div></div>
+<div class="card"><div class="row"><h3>Quick Add Nursing Work</h3><button class="smallbtn" onclick="showPage('work')">View all</button></div><div class="grid"><button class="btn secondary" onclick="quickAdd('IV')">＋ IV</button><button class="btn secondary" onclick="quickAdd('IM')">＋ IM</button><button class="btn secondary" onclick="quickAdd('Sample')">＋ Sample</button><button class="btn ghost" onclick="showPage('work')">＋ More work</button></div></div>
+<div class="grid"><div class="metric"><div class="ico">💉</div><strong id="todayProcedures">0</strong><span>Procedures today</span></div><div class="metric moneyMetric"><div class="ico">💰</div><strong id="todayMoney">Rs. 0</strong><span>Today's earnings</span></div><div class="metric"><div class="ico">👣</div><strong id="todaySteps">—</strong><span>Steps today</span></div><div class="metric"><div class="ico">📍</div><strong id="todayKm">— km</strong><span>Estimated distance</span></div></div>
+<div class="grid" style="margin-top:13px"><div class="metric p1"><div class="ico">📅</div><strong id="mProc">0</strong><span>Procedures this month</span></div><div class="metric p2 moneyMetric"><div class="ico">💰</div><strong id="mMoney">Rs. 0</strong><span>Earned this month</span></div><div class="metric p3"><div class="ico">☀️</div><strong id="mDay">0</strong><span>Day duties</span></div><div class="metric p4"><div class="ico">🌙</div><strong id="mNight">0</strong><span>Night duties</span></div></div>
+<div class="card moneyMetric" style="margin-top:13px"><div class="row"><h3>Daily goal</h3><span class="muted" id="goalText"></span></div><div class="bar"><i id="goalFill"></i></div></div>
+<div class="card" id="fWeek"><h3>Last 7 days · procedures</h3><div class="week" id="weekChart"></div></div>
+<div class="card" id="fWater"><div class="row"><h3>💧 Water today</h3><strong id="waterCount">0 / 8</strong></div><div class="drops" id="waterDrops"></div><div class="two"><button class="btn secondary" onclick="water(1)">＋ Glass</button><button class="btn ghost" onclick="water(-1)">− Undo</button></div></div>
+<div class="card" id="fShortcuts"><h3>Shortcuts</h3><div class="tiles"><button onclick="showPage('history')"><i>🕘</i>History</button><button onclick="showPage('history')"><i>📊</i>Monthly report</button><button onclick="showPage('attendance')"><i>📅</i>Attendance</button><button onclick="showPage('wellness')"><i>🌿</i>Wellness</button></div></div>
+<div class="card"><div class="row"><h3>Today's Attendance</h3><button class="smallbtn" onclick="showPage('attendance')">Open</button></div><div class="muted" id="attendanceToday">No attendance recorded yet.</div></div>
+<div class="card quote" id="fQuote"><div class="muted">Daily inspiration</div><p id="dailyQuote"></p></div>
+<div class="card" id="fGame"><div class="row"><div><strong>🎮 Memory game</strong><div class="muted">A short break between duties</div></div><button class="smallbtn" onclick="showPage('game')">Play</button></div></div>
+<div class="card"><div class="row"><h3>🌿 Nurse Wellness</h3><button class="smallbtn" onclick="showPage('wellness')">More tips</button></div><div id="dailyTip">Stay hydrated during your shift. Use appropriate breaks when workload and patient care allow.</div></div>
+<div class="card"><div class="row"><h3>🛡️ Safety reminder</h3><button class="smallbtn" onclick="showPage('safety')">Safety Centre</button></div><div id="dailySafety">Perform hand hygiene at the appropriate moments and follow your facility's infection-prevention policy.</div></div>
+</section>
+<section id="work" class="hidden"><div class="card"><h3>Add Nursing Work</h3><div class="muted">Enter the quantity for each procedure. Rates can be changed in Settings.</div><div id="servicesList"></div><div class="field"><label>Additional / Custom Work</label><input id="customName" placeholder="e.g. Wound dressing"></div><div class="two"><div class="field"><label>Quantity</label><input id="customQty" type="number" min="0" value="1"></div><div class="field moneyMetric"><label>Rate (Rs.)</label><input id="customRate" type="number" min="0" value="100"></div></div><button class="btn full" id="addCustom">＋ Add Custom Work</button></div><div class="card"><h3>Today's Work Summary</h3><div id="workSummary"></div><div class="row" style="padding-top:12px"><strong>Total procedures</strong><strong id="workTotal">0</strong></div><div class="row moneyMetric" style="padding-top:8px"><strong>Total earnings</strong><strong id="workMoney">Rs. 0</strong></div><button class="btn full" id="doneShift" style="margin-top:15px">✓ Save Today's Work</button></div></section>
+<section id="attendance" class="hidden"><div class="card"><h3>Monthly Attendance</h3><div class="field"><label>Select Month</label><input type="month" id="attMonth"></div><div class="two"><div class="field"><label>Ward / Department</label><input id="wardInput" placeholder="e.g. Medical Ward"></div><div class="field"><label>Shift</label><select id="shiftType"><option>Day Shift</option><option>Evening Shift</option><option>Night Shift</option><option>Rotating</option></select></div></div><div class="field"><label>Mark Attendance for Today</label><select id="attStatus"><option>Present</option><option>Late</option><option>Half Day</option><option>Leave</option><option>Off Day</option><option>Absent</option></select></div><button class="btn full" id="saveAttendance">Save Attendance & Ward</button></div><div class="card"><h3>Attendance Summary</h3><div class="grid" id="attStats"></div><h3 style="margin-top:18px">Date-wise Records</h3><div id="attHistory"></div></div></section>
+<section id="history" class="hidden"><div class="card"><h3>Daily History</h3><div class="field"><label>Select Month</label><input type="month" id="historyMonth"></div><div id="historyList"></div></div><div class="card"><h3>Monthly Summary</h3><div id="monthSummary"></div><button class="btn secondary full" id="csvBtn">⬇ Download month as CSV</button></div></section>
+<section id="wellness" class="hidden"><div class="card"><h3>🌿 Nurse Wellness</h3><p class="muted">General wellness information, not a substitute for clinical advice.</p><div id="tipsList"></div></div></section>
+<section id="safety" class="hidden"><div class="card"><h3>🛡️ Nursing Safety & Clinical Guidelines</h3><p class="muted">Follow your facility's policies, current clinical guidance and authorized scope of practice.</p><div id="safetyList"></div></div></section>
+<section id="game" class="hidden"><div class="card"><div class="row"><h3>🧠 Memory Match</h3><button class="smallbtn" onclick="showPage('dashboard')">Back</button></div><div class="muted">Find all 6 pairs. A short break between duties.</div><div class="row" style="margin:10px 0"><span>Moves: <strong id="gMoves">0</strong></span><span>Best: <strong id="gBest">—</strong></span></div><div id="gBoard" class="gboard"></div><button class="btn full" id="gNew" style="margin-top:14px">New game</button></div></section>
+<section id="settings" class="hidden"><div class="card"><h3>Language</h3><div class="langset"><button data-lang="en">English</button><button data-lang="ur">اردو</button><button data-lang="sd">سنڌي</button></div></div><div class="card"><h3>Settings & Preferences</h3><div class="listrow row"><div><strong>Earnings & Pricing</strong><div class="muted">Hide all money values when switched off</div></div><input class="switch" type="checkbox" id="moneyToggle" checked></div><div class="listrow row"><div><strong>Step Counter</strong><div class="muted">Optional motion tracking (sensor support required)</div></div><input class="switch" type="checkbox" id="stepsToggle"></div><div class="listrow row"><div><strong>Daily Health Tips</strong><div class="muted">Show wellness card on dashboard</div></div><input class="switch" type="checkbox" id="tipsToggle" checked></div><div class="listrow row"><div><strong>Safety Reminders</strong><div class="muted">Show clinical safety reminders</div></div><input class="switch" type="checkbox" id="safetyToggle" checked></div><div class="listrow row"><div><strong>Dark mode</strong><div class="muted">Easier on the eyes on night shifts</div></div><input class="switch" type="checkbox" id="darkToggle"></div><div class="listrow row moneyMetric"><div><strong>Daily earning goal (Rs.)</strong><div class="muted">Progress bar on Home</div></div><input id="goalInput" type="number" min="0" style="width:96px;padding:9px;border:1px solid var(--line);border-radius:10px"></div><div id="earningSettingsPanel" class="hidden"><button class="btn secondary full" id="toggleRates" type="button" style="margin-top:12px">＋ Open earning entry & procedure rates</button><div id="ratesEditor" class="hidden"><h3 style="margin-top:18px">Procedure Rates (Rs.)</h3><p class="muted">Edit rates only when needed. Tap Save Settings to keep changes.</p><div id="ratesSettings"></div></div></div><button class="btn full" id="saveSettings" style="margin-top:14px">Save Settings</button></div><div class="card"><h3>Show / hide features</h3><p class="muted">Turn off anything you don’t use. Your saved data stays safe and everything keeps working.</p><div class="listrow row"><div><strong>Quick shortcuts</strong><div class="muted">History, report, attendance buttons on Home</div></div><input class="switch" type="checkbox" data-feat="shortcuts"></div><div class="listrow row"><div><strong>Last 7 days chart</strong><div class="muted">Procedures chart on Home</div></div><input class="switch" type="checkbox" data-feat="week"></div><div class="listrow row"><div><strong>Water tracker</strong><div class="muted">Count glasses of water each day</div></div><input class="switch" type="checkbox" data-feat="water"></div><div class="listrow row"><div><strong>Daily inspiration</strong><div class="muted">Show a motivational quote on Home</div></div><input class="switch" type="checkbox" data-feat="quote"></div><div class="listrow row"><div><strong>Memory game</strong><div class="muted">A short break between duties</div></div><input class="switch" type="checkbox" data-feat="game"></div></div>
+<div class="card"><h3>Profile & Ward</h3><div class="field"><label>Display Name</label><input id="profileName" placeholder="Your name"></div><div class="field"><label>Ward / Department</label><input id="profileWard" placeholder="e.g. Surgical Ward"></div><button class="btn full" id="saveProfile">Save Profile</button></div><div class="card"><h3>Security</h3><div class="field"><label>Create / Change App Password</label><input id="newPassword" type="password" minlength="4" placeholder="At least 4 characters"></div><button class="btn secondary full" id="setPassword">Set Password</button><p class="muted">This offline demo uses a local app lock, not an encrypted account system. Do not store patient-identifying information.</p><h3>About</h3><strong>NurseWork Pro</strong><p class="muted">Nursing Work, Attendance & Wellness Tracker</p><strong>Nadia Yousuf</strong><div class="muted">Staff Nurse & Nursing Instructor (Research)</div><p class="muted">Supporting Better Nursing Practice & Patient Care</p><button class="btn danger full" id="exportData">Export Backup (JSON)</button><button class="btn ghost full" id="clearData" style="margin-top:8px">Clear All App Data</button></div></section>
+</main>
+<nav class="tabs"><button class="tab active" data-page="dashboard"><b>🏠</b>Home</button><button class="tab" data-page="work"><b>💉</b>Work</button><button class="tab" data-page="attendance"><b>📅</b>Attendance</button><button class="tab" data-page="history"><b>🕘</b>History</button><button class="tab" data-page="settings"><b>⚙️</b>Settings</button></nav>
+</div>
+<div id="splash" class="splash"><i class="blob b1"></i><i class="blob b2"></i><i class="blob b3"></i><span class="fl f1">💉</span><span class="fl f2">🩺</span><span class="fl f3">💊</span><span class="fl f4">💙</span><span class="fl f5">✨</span><span class="fl f6">🌡️</span><div class="splashinner"><div class="langbar"><button data-lang="en">English</button><button data-lang="ur">اردو</button><button data-lang="sd">سنڌي</button></div>
+<div class="sp-logo"><img alt="NurseWork.Pro logo" src="data:image/jpeg;base64,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"></div>
+<h1>NurseWork.Pro</h1>
+<svg class="ecg" viewBox="0 0 300 40" aria-hidden="true"><defs><linearGradient id="eg" x1="0" x2="1"><stop stop-color="#ff7ab8"/><stop offset=".5" stop-color="#ffd166"/><stop offset="1" stop-color="#4de3f5"/></linearGradient></defs><path pathLength="1" d="M4 22h84l10-15 12 31 12-37 12 29 8-8h150"/></svg>
+<div class="sp-sub">BSN Nursing Daily Work &amp; Earnings Tracker</div>
+<div class="pills"><span>💉 Track Your Work</span><span>💰 Manage Your Earnings</span><span>🚀 Build Your Future</span></div>
+<div class="credit"><small>Developed by</small><strong>Nadia Yousuf</strong><small>Staff Nurse &amp; Nursing Instructor (Research)</small></div><button class="btn" id="continueBtn">Get started</button></div></div>
+<div id="authModal" class="modal hidden"><div class="modalbox"><div style="text-align:center;font-size:34px">🩺</div><h2 id="authTitle" style="text-align:center;margin:5px 0 2px">Create Your Profile</h2><p class="muted" style="text-align:center">Set up your personal nursing workspace.</p><div class="field"><label>Your Name</label><input id="authName" autocomplete="name" placeholder="Enter your name"></div><div class="field"><label>Create Password</label><input id="authPass" type="password" placeholder="At least 4 characters"></div><div class="field"><label>Ward / Department (optional)</label><input id="authWard" placeholder="e.g. Medical Ward"></div><button class="btn full" id="authSubmit">Create Profile</button><p class="muted">For privacy, use this app only on a device you trust. This prototype stores data locally on this device.</p></div></div>
+<div id="lockModal" class="modal hidden"><div class="modalbox"><div style="text-align:center;font-size:32px">🔐</div><h2 style="text-align:center">Welcome Back</h2><p class="muted" style="text-align:center">Enter your app password to continue.</p><div class="field"><label>Password</label><input id="unlockPass" type="password"></div><button class="btn full" id="unlockBtn">Unlock App</button></div></div>
+<div id="toast" style="position:fixed;bottom:85px;left:50%;transform:translateX(-50%);background:#123b56;color:white;padding:11px 16px;border-radius:12px;z-index:50;display:none;max-width:90%;font-size:13px"></div>
+<script>
+const $=id=>document.getElementById(id);
+const today=()=>new Date().toISOString().slice(0,10);
+const monthNow=()=>today().slice(0,7);
+const moneyFmt=n=>'Rs. '+Number(n||0).toLocaleString('en-PK');
+const defaultRates={'IV':150,'IM':150,'Sample':100,'IV Cannulation':200,'IV Medication':150,'Medication Administration':100,'Blood Glucose / RBS':100,'Vital Signs':50,'Wound Dressing':200,'Catheterization':300,'Urine Sample':100,'Nebulization':100,'NG Tube / Feeding':250,'Blood Transfusion':300,'Procedure Assistance':150,'Patient Care':100};
+const tips=['Stay hydrated during your shift. Plan water breaks when workload and patient care allow.','Use appropriate breaks for gentle stretching and movement when safe to do so.','After a demanding shift, prioritize adequate rest and sleep.','Wear supportive footwear suitable for your clinical environment.','Ask for assistance with patient handling when needed; follow safe moving-and-handling procedures.'];
+const safety=[['Hand hygiene','Perform hand hygiene at the appropriate moments and follow your facility’s infection-prevention policy.'],['Medication safety','Verify the correct patient, medicine, dose, route and time; check allergies and clarify unclear orders. Follow local medication policy.'],['Sharps safety','Never recap used needles unless an approved procedure specifically requires it. Dispose of sharps immediately in the designated container.'],['Patient monitoring','Record observations accurately and promptly escalate concerning changes using your facility’s emergency process.'],['Documentation & handover','Document care accurately and on time. Share relevant information securely during handover and protect confidentiality.'],['PPE & exposure','Use appropriate PPE. Report needlestick injuries or exposure immediately and follow occupational-health protocol.'],['Scope of practice','Perform only procedures for which you are trained and authorized. Follow current policies and clinical supervision.']];
+let db={profile:null,settings:{money:true,steps:false,tips:true,safety:true,rates:{...defaultRates}},days:{},attendance:{},password:null};
+function load(){try{const s=localStorage.getItem('nurseworkpro_v1');if(s)db={...db,...JSON.parse(s)};}catch(e){}}
+function save(){localStorage.setItem('nurseworkpro_v1',JSON.stringify(db));}
+function dayRecord(d=today()){if(!db.days[d])db.days[d]={work:{},start:null,end:null,steps:null,km:null,ward:'',shift:'',saved:false};return db.days[d]}
+function toast(s){$('toast').textContent=s;$('toast').style.display='block';setTimeout(()=>$('toast').style.display='none',2300)}
+function showPage(page){document.querySelectorAll('main section').forEach(s=>s.classList.add('hidden'));$(page).classList.remove('hidden');document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('active',t.dataset.page===page));if(page==='work')renderWork();if(page==='attendance')renderAttendance();if(page==='history')renderHistory();if(page==='wellness')renderTips();if(page==='safety')renderSafety();if(page==='settings')renderSettings();renderDash();window.scrollTo(0,0)}
+document.querySelectorAll('.tab').forEach(t=>t.onclick=()=>showPage(t.dataset.page));
+function moneyVisible(){document.querySelectorAll('.moneyMetric').forEach(e=>e.classList.toggle('hidden',!db.settings.money));const ep=$('earningSettingsPanel');if(ep)ep.classList.toggle('hidden',!db.settings.money);}
+function totalWork(r){return Object.values(r.work||{}).reduce((a,v)=>a+Number(v.qty||0),0)}
+function totalMoney(r){return Object.entries(r.work||{}).reduce((a,[n,v])=>a+Number(v.qty||0)*Number(v.rate??db.settings.rates[n]??0),0)}
+function renderDash(){const r=dayRecord();$('helloName').textContent=db.profile?.name||'Nursing Professional';$('todayDate').textContent=new Date().toLocaleDateString('en-GB',{weekday:'short',day:'numeric',month:'short',year:'numeric'});$('monthPill').textContent=new Date().toLocaleDateString('en-GB',{month:'short',year:'numeric'});$('wardLabel').textContent=r.ward||db.profile?.ward||'Ward not set';$('shiftState').textContent=r.end?'Shift completed':r.start?'On duty':'Not started';$('dutyTimes').textContent='Duty In: '+(r.start||'—')+' · Duty Out: '+(r.end||'—');$('todayProcedures').textContent=totalWork(r);$('todayMoney').textContent=moneyFmt(totalMoney(r));$('todaySteps').textContent=db.settings.steps?(r.steps??'Not recorded'):'Off';$('todayKm').textContent=db.settings.steps?(r.km??'—')+' km':'Off';$('attendanceToday').textContent=(db.attendance[today()]||'Not marked')+' · '+(r.ward||db.profile?.ward||'Ward not set');$('dailyTip').textContent=tips[new Date().getDate()%tips.length];$('dailySafety').textContent=safety[new Date().getDate()%safety.length][1];$('dailyTip').parentElement.classList.toggle('hidden',!db.settings.tips);$('dailySafety').parentElement.classList.toggle('hidden',!db.settings.safety);moneyVisible();}
+function renderWork(){const r=dayRecord();$('servicesList').innerHTML=Object.entries(db.settings.rates).map(([n,rate])=>`<div class="service"><div class="svc"><span class="sico">${svcIcon(n)}</span><span><strong>${esc(n)}</strong><small>${db.settings.money?moneyFmt(rate)+' each':'Quantity tracking'}</small></span></div><input type="number" min="0" value="${Number(r.work[n]?.qty||0)}" aria-label="${esc(n)} quantity" onchange="setQty('${esc(n)}',this.value)" placeholder="Qty"><button class="smallbtn" onclick="quickAdd('${esc(n)}')">+1</button></div>`).join('');renderWorkSummary();moneyVisible();}
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function setQty(n,q){const r=dayRecord();r.work[n]={qty:Math.max(0,Number(q)||0),rate:Number(db.settings.rates[n]||0)};save();renderWorkSummary();renderDash();}
+function quickAdd(n){const r=dayRecord();if(!r.work[n])r.work[n]={qty:0,rate:Number(db.settings.rates[n]||0)};r.work[n].qty++;save();renderWork();renderDash();toast(n+' added');}
+function renderWorkSummary(){const r=dayRecord(),items=Object.entries(r.work||{}).filter(([n,v])=>Number(v.qty)>0);$('workSummary').innerHTML=items.length?items.map(([n,v])=>`<div class="row listrow"><span>${esc(n)} <span class="muted">× ${v.qty}</span></span><strong>${db.settings.money?moneyFmt(v.qty*v.rate):v.qty+' done'}</strong></div>`).join(''):'<div class="empty">No nursing work added yet.</div>';$('workTotal').textContent=totalWork(r);$('workMoney').textContent=moneyFmt(totalMoney(r));moneyVisible();}
+$('startDuty').onclick=()=>{const r=dayRecord();if(r.start){toast('Duty already started at '+r.start);return}r.start=new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit',hour12:false});r.ward=$('wardInput').value||db.profile?.ward||'';r.shift=$('shiftType').value||'Day Shift';db.attendance[today()]=db.attendance[today()]||'Present';save();renderDash();toast('Duty started');};
+$('endDuty').onclick=()=>{const r=dayRecord();if(!r.start){toast('Please start duty first');return}r.end=new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit',hour12:false});r.saved=true;save();renderDash();toast('Duty ended and saved');};
+$('doneShift').onclick=()=>{dayRecord().saved=true;save();renderDash();toast('Today’s work saved');showPage('dashboard')};
+$('addCustom').onclick=()=>{const n=$('customName').value.trim();if(!n){toast('Enter a work name');return}const q=Math.max(1,Number($('customQty').value)||1),rate=Math.max(0,Number($('customRate').value)||0);if(!db.settings.rates[n])db.settings.rates[n]=rate;const r=dayRecord();if(!r.work[n])r.work[n]={qty:0,rate};r.work[n].qty+=q;r.work[n].rate=rate;save();$('customName').value='';renderWork();renderDash();toast('Custom work added')};
+$('attMonth').value=monthNow();$('historyMonth').value=monthNow();
+$('saveAttendance').onclick=()=>{db.attendance[today()]=$('attStatus').value;const r=dayRecord();r.ward=$('wardInput').value.trim()||db.profile?.ward||'';r.shift=$('shiftType').value; if(db.profile)db.profile.ward=r.ward;save();renderAttendance();renderDash();toast('Attendance saved')};
+function renderAttendance(){const m=$('attMonth').value||monthNow();$('wardInput').value=dayRecord().ward||db.profile?.ward||'';const counts={'Present':0,'Late':0,'Half Day':0,'Leave':0,'Off Day':0,'Absent':0};Object.entries(db.attendance).filter(([d])=>d.startsWith(m)).forEach(([d,s])=>counts[s]=(counts[s]||0)+1);$('attStats').innerHTML=Object.entries(counts).map(([n,v])=>`<div class="metric"><span>${n}</span><strong>${v}</strong></div>`).join('');const entries=Object.entries(db.attendance).filter(([d])=>d.startsWith(m)).sort((a,b)=>b[0].localeCompare(a[0]));$('attHistory').innerHTML=entries.length?entries.map(([d,s])=>`<div class="row listrow"><span><strong>${d}</strong><div class="muted">${new Date(d+'T12:00:00').toLocaleDateString('en-GB',{weekday:'short'})}</div></span><span class="chip">${esc(s)}</span></div>`).join(''):'<div class="empty">No attendance records for this month.</div>'}
+$('attMonth').onchange=renderAttendance;
+function renderHistory(){const m=$('historyMonth').value||monthNow();const entries=Object.entries(db.days).filter(([d])=>d.startsWith(m)).sort((a,b)=>b[0].localeCompare(a[0]));$('historyList').innerHTML=entries.length?entries.map(([d,r])=>`<div class="listrow"><div class="row"><div><strong>${d}</strong><div class="muted">${esc(r.ward||db.profile?.ward||'Ward not set')} · ${r.shift?esc(r.shift)+' · ':''}${r.start||'No start'} – ${r.end||'No end'}</div></div><div style="text-align:right"><strong>${totalWork(r)} procedures</strong><div class="muted moneyMetric">${db.settings.money?moneyFmt(totalMoney(r)):''}</div></div></div><button class="smallbtn" style="margin-top:8px" onclick="showDay('${d}')">View details</button></div>`).join(''):'<div class="empty">No saved work records for this month yet.</div>';const days=entries.map(x=>x[1]);const sums=days.reduce((a,r)=>({proc:a.proc+totalWork(r),money:a.money+totalMoney(r),hours:a.hours+durationHours(r),steps:a.steps+Number(r.steps||0),km:a.km+Number(r.km||0)}),{proc:0,money:0,hours:0,steps:0,km:0});const att=Object.entries(db.attendance).filter(([d])=>d.startsWith(m));$('monthSummary').innerHTML=`<div class="grid"><div class="metric"><span>Total procedures</span><strong>${sums.proc}</strong></div><div class="metric"><span>Attendance records</span><strong>${att.length}</strong></div><div class="metric"><span>Duty hours*</span><strong>${sums.hours.toFixed(1)}</strong></div><div class="metric"><span>Recorded shifts</span><strong>${days.filter(r=>r.start).length}</strong></div>${db.settings.steps?`<div class="metric"><span>Recorded steps</span><strong>${sums.steps.toLocaleString()}</strong></div><div class="metric"><span>Distance</span><strong>${sums.km.toFixed(2)} km</strong></div>`:''}</div>${db.settings.money?`<div class="card" style="margin-top:12px;background:var(--mint)"><span class="muted">Total earnings for ${m}</span><strong style="display:block;font-size:25px">${moneyFmt(sums.money)}</strong></div>`:''}<p class="muted">*Duty hours calculated only when start and end times are available. Records are stored on this device.</p>`;moneyVisible();}
+function durationHours(r){if(!r.start||!r.end)return 0;const p=s=>{let [h,m]=s.split(':');return Number(h)*60+Number(m)};let a=p(r.start),b=p(r.end);if(b<a)b+=1440;return (b-a)/60}
+$('historyMonth').onchange=renderHistory;
+function showDay(d){const r=db.days[d]||{};const detail=Object.entries(r.work||{}).map(([n,v])=>`${n}: ${v.qty} × ${db.settings.money?moneyFmt(v.rate):'rate hidden'}`).join('\n')||'No procedures';alert(`${d}\nWard: ${r.ward||'—'}\nShift: ${r.shift||'—'}\nDuty: ${r.start||'—'} to ${r.end||'—'}\n\n${detail}\n\nTotal procedures: ${totalWork(r)}${db.settings.money?'\nTotal earnings: '+moneyFmt(totalMoney(r)):''}${db.settings.steps?'\nSteps: '+(r.steps??'Not recorded')+'\nDistance: '+(r.km??'—')+' km':''}`)}
+function renderTips(){$('tipsList').innerHTML=tips.map((t,i)=>`<div class="listrow"><strong>Tip ${i+1}</strong><p style="margin:5px 0 0">${t}</p></div>`).join('')}
+function renderSafety(){$('safetyList').innerHTML=safety.map(([h,t])=>`<div class="listrow"><strong>${h}</strong><p style="margin:5px 0 0">${t}</p></div>`).join('')}
+function renderSettings(){$('moneyToggle').checked=!!db.settings.money;$('stepsToggle').checked=!!db.settings.steps;$('tipsToggle').checked=!!db.settings.tips;$('safetyToggle').checked=!!db.settings.safety;$('profileName').value=db.profile?.name||'';$('profileWard').value=db.profile?.ward||'';$('ratesSettings').innerHTML=Object.entries(db.settings.rates).map(([n,r])=>`<div class="service"><div><strong>${esc(n)}</strong></div><input type="number" min="0" value="${r}" data-rate="${esc(n)}" aria-label="${esc(n)} rate"><button class="smallbtn" onclick="deleteRate('${esc(n)}')">Remove</button></div>`).join('');moneyVisible();$('toggleRates').onclick=()=>{const editor=$('ratesEditor');const opening=editor.classList.contains('hidden');editor.classList.toggle('hidden',!opening);$('toggleRates').textContent=opening?'− Close earning entry & procedure rates':'＋ Open earning entry & procedure rates';};$('moneyToggle').onchange=()=>{db.settings.money=$('moneyToggle').checked;save();moneyVisible();};}
+function deleteRate(n){if(['IV','IM','Sample'].includes(n)){toast('Core services cannot be removed');return}delete db.settings.rates[n];save();renderSettings()}
+$('saveSettings').onclick=()=>{db.settings.money=$('moneyToggle').checked;db.settings.steps=$('stepsToggle').checked;db.settings.tips=$('tipsToggle').checked;db.settings.safety=$('safetyToggle').checked;document.querySelectorAll('[data-rate]').forEach(i=>db.settings.rates[i.dataset.rate]=Math.max(0,Number(i.value)||0));save();moneyVisible();renderDash();renderWork();renderSettings();toast('Settings saved')};
+$('saveProfile').onclick=()=>{db.profile={...(db.profile||{}),name:$('profileName').value.trim()||'Nursing Professional',ward:$('profileWard').value.trim()};save();renderDash();toast('Profile saved')};
+$('setPassword').onclick=()=>{const p=$('newPassword').value;if(p.length<4){toast('Use at least 4 characters');return}db.password=p;save();$('newPassword').value='';toast('App password updated')};
+$('exportData').onclick=()=>{const blob=new Blob([JSON.stringify(db,null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='NurseWorkPro-backup-'+today()+'.json';a.click();URL.revokeObjectURL(a.href);toast('Backup export started')};
+$('clearData').onclick=()=>{if(confirm('Delete all NurseWork Pro data stored on this device? This cannot be undone.')){localStorage.removeItem('nurseworkpro_v1');location.reload()}};
+$('continueBtn').onclick=()=>{$('splash').classList.add('hidden');if(!db.profile){$('authModal').classList.remove('hidden')}else if(db.password){$('lockModal').classList.remove('hidden')}else{renderDash()}};
+$('authSubmit').onclick=()=>{const n=$('authName').value.trim(),p=$('authPass').value;if(!n||p.length<4){toast('Enter your name and a password of at least 4 characters');return}db.profile={name:n,ward:$('authWard').value.trim()};db.password=p;save();$('authModal').classList.add('hidden');renderDash();toast('Profile created')};
+$('unlockBtn').onclick=()=>{if($('unlockPass').value===db.password){$('lockModal').classList.add('hidden');$('unlockPass').value='';renderDash()}else toast('Incorrect password')};
+
+/* ===== v2 features ===== */
+db.water=db.water||{};
+function applyTheme(){document.documentElement.dataset.theme=db.settings.dark?'dark':'';const tb=$('themeBtn');if(tb)tb.textContent=db.settings.dark?'☀️':'🌙';const m=document.querySelector('meta[name=theme-color]');if(m)m.content=db.settings.dark?'#0a0f2e':'#4a35c4'}
+function water(d){if(!db.water)db.water={};const k=today();db.water[k]=Math.max(0,(db.water[k]||0)+d);save();extras()}
+function extras(){const r=dayRecord(),g=Number(db.settings.goal??1000),m=totalMoney(r);
+$('goalText').textContent=moneyFmt(m)+' / '+moneyFmt(g);$('goalFill').style.width=Math.min(100,g?m/g*100:0)+'%';
+const ds=[...Array(7)].map((_,i)=>new Date(Date.now()-(6-i)*864e5).toISOString().slice(0,10));const vals=ds.map(k=>totalWork(db.days[k]||{}));const mx=Math.max(1,...vals);
+$('weekChart').innerHTML=ds.map((k,i)=>`<div class="wk"><span>${vals[i]}</span><i class="${k===today()?'now':''}" style="height:${Math.round(vals[i]/mx*64)+6}px"></i><small>${new Date(k+'T12:00:00').toLocaleDateString('en-GB',{weekday:'short'})}</small></div>`).join('');
+const n=(db.water||{})[today()]||0;$('waterCount').textContent=n+' / 8';$('waterDrops').innerHTML=[...Array(8)].map((_,i)=>`<b class="${i<n?'on':''}">💧</b>`).join('');
+const t=$('liveTimer'),mt=r.start&&String(r.start).match(/(\d+):(\d+)\s*(am|pm)?/i);
+if(!mt){t.textContent='—';return}let h=+mt[1];if(mt[3]){h=h%12+(/pm/i.test(mt[3])?12:0)}let a=h*60+ +mt[2],b=new Date().getHours()*60+new Date().getMinutes();
+if(r.end){const e=String(r.end).match(/(\d+):(\d+)\s*(am|pm)?/i);if(e){let eh=+e[1];if(e[3])eh=eh%12+(/pm/i.test(e[3])?12:0);b=eh*60+ +e[2]}}
+let d=b-a;if(d<0)d+=1440;t.textContent=Math.floor(d/60)+'h '+String(d%60).padStart(2,'0')+'m'}
+const _rd=renderDash;renderDash=function(){_rd();applyTheme();extras()};
+const _rs=renderSettings;renderSettings=function(){_rs();$('darkToggle').checked=!!db.settings.dark;$('goalInput').value=db.settings.goal??1000};
+$('darkToggle').onchange=()=>{db.settings.dark=$('darkToggle').checked;save();applyTheme()};
+$('goalInput').onchange=()=>{db.settings.goal=Math.max(0,Number($('goalInput').value)||0);save();extras();toast('Goal updated')};
+$('csvBtn').onclick=()=>{const m=$('historyMonth').value||monthNow(),mo=db.settings.money,rows=[['Date','Ward','Shift','Start','End','Procedures'].concat(mo?['Earnings']:[])];Object.entries(db.days).filter(([d])=>d.startsWith(m)).sort().forEach(([d,r])=>rows.push([d,r.ward||'',r.shift||'',r.start||'',r.end||'',totalWork(r)].concat(mo?[totalMoney(r)]:[])));const csv=rows.map(x=>x.map(c=>'"'+String(c).replace(/"/g,'""')+'"').join(',')).join('\n');const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));a.download='NurseWorkPro-'+m+'.csv';a.click();URL.revokeObjectURL(a.href);toast('CSV downloaded')};
+setInterval(extras,30000);
+
+/* ===== v3: wards, shifts, night button, history breakdown ===== */
+const baseWards=['Medical Ward','Surgical Ward','ICU','CCU','NICU','PICU','Emergency / Casualty','Operation Theatre (OT)','Recovery Room','Labour Room','Gynae / Obs Ward','Paediatric Ward','Neonatal Ward','Orthopaedic Ward','Cardiology Ward','Neurology Ward','Nephrology / Dialysis','Urology Ward','Oncology Ward','Burns Unit','Psychiatry Ward','Isolation Ward','ENT / Eye Ward','OPD','Private Rooms'];
+function fillWards(){const r=db.days[today()]||{},cur=r.ward||db.lastWard||db.profile?.ward||'';const list=[...new Set([...baseWards,...(db.settings.customWards||[]),...(cur?[cur]:[])])];
+$('dutyWard').innerHTML='<option value="">Select your ward…</option>'+list.map(w=>`<option>${esc(w)}</option>`).join('')+'<option value="__new">＋ Add new ward…</option>';
+$('dutyWard').value=cur;$('dutyShift').value=r.shift||db.lastShift||'Day Shift';if(!$('dutyShift').value)$('dutyShift').value='Day Shift'}
+function saveDuty(){const r=db.days[today()],w=$('dutyWard').value,sh=$('dutyShift').value;db.lastWard=w;db.lastShift=sh;if(r&&r.start){r.ward=w;r.shift=sh}save();renderDash()}
+$('dutyWard').onchange=()=>{if($('dutyWard').value==='__new'){const n=(prompt('New ward / department name')||'').trim();if(n){if(![...baseWards,...(db.settings.customWards||[])].includes(n))db.settings.customWards=[...(db.settings.customWards||[]),n];db.lastWard=n;fillWards();$('dutyWard').value=n;saveDuty()}else fillWards();return}saveDuty()};
+$('dutyShift').onchange=saveDuty;
+$('startDuty').onclick=()=>{const w=$('dutyWard').value;if(!w||w==='__new'){toast('Select your ward first');return}const r=dayRecord();if(r.start){toast('Duty already started at '+r.start);return}r.start=new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit',hour12:false});r.ward=w;r.shift=$('dutyShift').value;db.lastWard=w;db.lastShift=r.shift;db.attendance[today()]=db.attendance[today()]||'Present';save();renderDash();toast('Duty started · '+w+' · '+r.shift)};
+const _rd2=renderDash;renderDash=function(){_rd2();fillWards()};
+const _ra=renderAttendance;renderAttendance=function(){_ra();const r=db.days[today()]||{};$('wardInput').value=r.ward||db.lastWard||db.profile?.ward||'';$('shiftType').value=r.shift||db.lastShift||'Day Shift'};
+$('attMonth').onchange=renderAttendance;
+const _rh=renderHistory;renderHistory=function(){_rh();const m=$('historyMonth').value||monthNow();const ds=Object.entries(db.days).filter(([d,r])=>d.startsWith(m)&&r.start);const sh={},wd={};
+ds.forEach(([d,r])=>{const s=r.shift||'Not set',w=r.ward||db.profile?.ward||'Ward not set';sh[s]=(sh[s]||0)+1;wd[w]=wd[w]||{t:0};wd[w][s]=(wd[w][s]||0)+1;wd[w].t++});
+const ic={'Day Shift':'☀️','Evening Shift':'🌆','Night Shift':'🌙','Rotating':'🔄'};
+const chips=Object.entries(sh).map(([s,n])=>`<span class="chip">${ic[s]||'•'} ${esc(s)}: ${n} day${n>1?'s':''}</span>`).join('');
+const rows=Object.entries(wd).sort((a,b)=>b[1].t-a[1].t).map(([w,o])=>`<div class="row listrow"><strong>${esc(w)}</strong><span class="muted">${o.t} day${o.t>1?'s':''} · ${Object.entries(o).filter(([k])=>k!=='t').map(([k,v])=>(ic[k]||'')+v).join(' ')}</span></div>`).join('');
+$('monthSummary').insertAdjacentHTML('afterbegin',`<div class="card" style="margin-bottom:12px"><h3>Where you worked</h3>${ds.length?chips+rows:'<div class="empty">No duty started this month.</div>'}</div>`)};
+$('historyMonth').onchange=renderHistory;
+$('themeBtn').onclick=()=>{db.settings.dark=!db.settings.dark;save();applyTheme();if($('darkToggle'))$('darkToggle').checked=db.settings.dark};
+
+/* ===== v4 ===== */
+const quotes=['If Allah chose this field for you, He saw the ability in you. Don’t give up.','One step at a time.','Not perfect, but progressing.','Discipline today, freedom tomorrow.','Rest is part of the plan.','Safe care is not just about procedures — it is about people.','Do your best, then trust Allah (tawakkul).'];
+function svcIcon(n){const k=n.toLowerCase(),m=[[/^iv$|cannul/,'💧'],[/med/,'💊'],[/^im$/,'💉'],[/sample|urine/,'🧪'],[/glucose|rbs|blood/,'🩸'],[/vital/,'🌡️'],[/wound|dress/,'🩹'],[/cathet/,'🧷'],[/nebul/,'💨'],[/ng|feed/,'🍼'],[/assist/,'🤝'],[/care/,'🤲']];for(const[r,e]of m)if(r.test(k))return e;return '🩺'}
+const _rd3=renderDash;renderDash=function(){_rd3();const h=new Date().getHours();$('greet').textContent=(h<12?'Good Morning':h<17?'Good Afternoon':'Good Evening')+' ♥';
+const m=monthNow();let p=0,mo=0,d=0,n=0;Object.entries(db.days).forEach(([k,r])=>{if(!k.startsWith(m))return;p+=totalWork(r);mo+=totalMoney(r);if(r.start){r.shift==='Night Shift'?n++:d++}});
+$('mProc').textContent=p;$('mMoney').textContent=moneyFmt(mo);$('mDay').textContent=d;$('mNight').textContent=n;$('dailyQuote').textContent=quotes[new Date().getDate()%quotes.length]};
+const _rh3=renderHistory;renderHistory=function(){_rh3();const m=$('historyMonth').value||monthNow(),t={};Object.entries(db.days).filter(([d])=>d.startsWith(m)).forEach(([d,r])=>Object.entries(r.work||{}).forEach(([n,v])=>{t[n]=(t[n]||0)+Number(v.qty||0)}));
+const it=Object.entries(t).filter(x=>x[1]>0).sort((a,b)=>b[1]-a[1]);$('monthSummary').insertAdjacentHTML('afterbegin',it.length?`<div class="grid" style="margin-bottom:12px">${it.map(([n,q],i)=>`<div class="metric p${i%4+1}"><div class="ico">${svcIcon(n)}</div><strong>${q}</strong><span>Total ${esc(n)}</span></div>`).join('')}</div>`:'')};
+$('historyMonth').onchange=renderHistory;
+
+/* ===== memory game ===== */
+const gIcons=['💉','🩺','💊','🌡️','🩹','🧪'];let gCards=[],gOpen=[],gMoves=0,gLock=false,gDone=0;
+function newGame(){gCards=[...gIcons,...gIcons].sort(()=>Math.random()-.5);gOpen=[];gMoves=0;gDone=0;gLock=false;$('gMoves').textContent=0;$('gBest').textContent=db.gameBest||'—';$('gBoard').innerHTML=gCards.map((c,i)=>`<button class="gc" onclick="flip(${i})"><span>?</span></button>`).join('')}
+function flip(i){const b=$('gBoard').children[i];if(gLock||b.classList.contains('up'))return;b.classList.add('up');b.firstChild.textContent=gCards[i];gOpen.push(i);if(gOpen.length<2)return;gMoves++;$('gMoves').textContent=gMoves;const[a,c]=gOpen;
+if(gCards[a]===gCards[c]){gOpen=[];if(++gDone===6){if(!db.gameBest||gMoves<db.gameBest){db.gameBest=gMoves;save();$('gBest').textContent=gMoves}toast('🎉 Well done — '+gMoves+' moves')}}
+else{gLock=true;setTimeout(()=>{[a,c].forEach(k=>{const e=$('gBoard').children[k];e.classList.remove('up');e.firstChild.textContent='?'});gOpen=[];gLock=false},700)}}
+const _sp=showPage;showPage=function(p){_sp(p);if(p==='game')newGame()};
+$('gNew').onclick=newGame;
+
+/* ===== i18n ===== */
+/*T-start*/
+const LT=`Home|ہوم|گهر
+Work|کام|ڪم
+Attendance|حاضری|حاضري
+History|ریکارڈ|رڪارڊ
+Settings|سیٹنگز|سيٽنگون
+Get started|شروع کریں|شروع ڪريو
+BSN Nursing Daily Work & Earnings Tracker|بی ایس این نرسنگ کا روزانہ کام اور کمائی کا ٹریکر|بي ايس اين نرسنگ جو روزاني ڪم ۽ ڪمائي جو ٽريڪر
+Track Your Work|اپنا کام ٹریک کریں|پنهنجو ڪم ٽريڪ ڪريو
+Manage Your Earnings|اپنی کمائی سنبھالیں|پنهنجي ڪمائي سنڀاليو
+Build Your Future|اپنا مستقبل بنائیں|پنهنجو مستقبل جوڙيو
+Developed by|تیار کردہ|تيار ڪندڙ
+Staff Nurse & Nursing Instructor (Research)|اسٹاف نرس اور نرسنگ انسٹرکٹر (ریسرچ)|اسٽاف نرس ۽ نرسنگ انسٽرڪٽر (ريسرچ)
+Nursing Work, Attendance & Wellness|نرسنگ کام، حاضری اور صحت|نرسنگ ڪم، حاضري ۽ صحت
+Nursing Professional|نرسنگ پروفیشنل|نرسنگ پروفيشنل
+Good Morning|صبح بخیر|صبح بخير
+Good Afternoon|دوپہر بخیر|ٻاپهرن بخير
+Good Evening|شام بخیر|شام بخير
+This Month|اس مہینے|هن مهيني
+Create Your Profile|اپنا پروفائل بنائیں|پنهنجو پروفائيل ٺاهيو
+Set up your personal nursing workspace.|اپنا ذاتی نرسنگ ورک اسپیس تیار کریں۔|پنهنجو ذاتي نرسنگ ورڪ اسپيس تيار ڪريو.
+Your Name|آپ کا نام|توهان جو نالو
+Enter your name|اپنا نام لکھیں|پنهنجو نالو لکو
+Create Password|پاس ورڈ بنائیں|پاسورڊ ٺاهيو
+At least 4 characters|کم از کم 4 حروف|گهٽ ۾ گهٽ 4 اکر
+Ward / Department (optional)|وارڈ / شعبہ (اختیاری)|وارڊ / کاتو (اختياري)
+e.g. Medical Ward|مثلاً میڈیکل وارڈ|مثال طور ميڊيڪل وارڊ
+e.g. Surgical Ward|مثلاً سرجیکل وارڈ|مثال طور سرجيڪل وارڊ
+Create Profile|پروفائل بنائیں|پروفائيل ٺاهيو
+For privacy, use this app only on a device you trust. This prototype stores data locally on this device.|رازداری کے لیے یہ ایپ صرف قابلِ اعتماد ڈیوائس پر استعمال کریں۔ ڈیٹا اسی ڈیوائس میں محفوظ ہوتا ہے۔|رازداري لاءِ هيءَ ايپ رڳو ڀروسي واري ڊوائيس تي استعمال ڪريو. ڊيٽا هن ڊوائيس ۾ ئي محفوظ ٿئي ٿو.
+Welcome Back|خوش آمدید|ڀليڪار
+Enter your app password to continue.|جاری رکنے کے لیے ایپ کا پاس ورڈ لکھیں۔|جاري رکڻ لاءِ ايپ جو پاسورڊ لکو.
+Password|پاس ورڈ|پاسورڊ
+Unlock App|ایپ کھولیں|ايپ کوليو
+TODAY'S SHIFT|آج کی شفٹ|اڄ جي شفٽ
+Today|آج|اڄ
+Ward not set|وارڈ منتخب نہیں|وارڊ چونڊيل ناهي
+Not started|شروع نہیں ہوئی|شروع نه ٿي
+On duty|ڈیوٹی پر|ڊيوٽي تي
+Shift completed|شفٹ مکمل|شفٽ مڪمل
+Ward / Unit|وارڈ / یونٹ|وارڊ / يونٽ
+Shift|شفٹ|شفٽ
+Select your ward|اپنا وارڈ منتخب کریں|پنهنجو وارڊ چونڊيو
+Add new ward|نیا وارڈ شامل کریں|نئون وارڊ شامل ڪريو
+Day Shift|دن کی شفٹ|ڏينهن جي شفٽ
+Evening Shift|شام کی شفٹ|شام جي شفٽ
+Night Shift|رات کی شفٹ|رات جي شفٽ
+Rotating|بدلتی ہوئی|گردشي
+Start Duty|ڈیوٹی شروع کریں|ڊيوٽي شروع ڪريو
+End Duty|ڈیوٹی ختم کریں|ڊيوٽي ختم ڪريو
+Duty In|ڈیوٹی شروع|ڊيوٽي شروع
+Duty Out|ڈیوٹی ختم|ڊيوٽي ختم
+Time on duty|ڈیوٹی کا وقت|ڊيوٽي جو وقت
+hr|گھنٹے|ڪلاڪ
+min|منٹ|منٽ
+Quick Add Nursing Work|نرسنگ کام فوری شامل کریں|نرسنگ ڪم تڪڙو شامل ڪريو
+View all|سب دیکھیں|سڀ ڏسو
+IV|آئی وی|آئي وي
+IM|آئی ایم|آئي ايم
+Sample|سیمپل|سيمپل
+More work|مزید کام|وڌيڪ ڪم
+Procedures today|آج کے پروسیجرز|اڄ جا پروسيجرز
+Today's earnings|آج کی کمائی|اڄ جي ڪمائي
+Steps today|آج کے قدم|اڄ جا قدم
+Estimated distance|اندازاً فاصلہ|اندازاً مفاصلو
+Procedures this month|اس مہینے کے پروسیجرز|هن مهيني جا پروسيجرز
+Earned this month|اس مہینے کی کمائی|هن مهيني جي ڪمائي
+Day duties|دن کی ڈیوٹیاں|ڏينهن جون ڊيوٽيون
+Night duties|رات کی ڈیوٹیاں|رات جون ڊيوٽيون
+Daily goal|روزانہ ہدف|روزاني مقصد
+Last 7 days · procedures|پچھلے 7 دن · پروسیجرز|پوئين 7 ڏينهن · پروسيجرز
+Water today|آج کا پانی|اڄ جو پاڻي
+Glass|گلاس|گلاس
+Undo|واپس|واپس
+Shortcuts|شارٹ کٹس|شارٽ ڪٽس
+Monthly report|ماہانہ رپورٹ|مهيني جو رپورٽ
+Wellness|صحت|صحت
+Today's Attendance|آج کی حاضری|اڄ جي حاضري
+Open|کھولیں|کوليو
+No attendance recorded yet.|ابھی تک کوئی حاضری درج نہیں۔|اڃا تائين ڪا حاضري درج ناهي.
+Not marked|درج نہیں|درج ناهي
+Daily inspiration|روزانہ حوصلہ|روزاني حوصلو
+Nurse Wellness|نرس کی صحت|نرس جي صحت
+More tips|مزید مشورے|وڌيڪ صلاحون
+Safety reminder|حفاظتی یاد دہانی|حفاظتي ياد ڏياريندڙ
+Safety Centre|حفاظتی مرکز|حفاظتي مرڪز
+Add Nursing Work|نرسنگ کام شامل کریں|نرسنگ ڪم شامل ڪريو
+Enter the quantity for each procedure. Rates can be changed in Settings.|ہر پروسیجر کی تعداد لکھیں۔ ریٹ سیٹنگز میں بدلے جا سکتے ہیں۔|هر پروسيجر جو تعداد لکو. ريٽ سيٽنگن ۾ بدلائي سگهجن ٿا.
+Additional / Custom Work|اضافی / اپنی مرضی کا کام|اضافي / پنهنجي مرضي جو ڪم
+e.g. Wound dressing|مثلاً زخم کی ڈریسنگ|مثال طور زخم جي ڊريسنگ
+Quantity|تعداد|تعداد
+Qty|تعداد|تعداد
+Rate (Rs.)|ریٹ (روپے)|ريٽ (روپيا)
+Add Custom Work|اپنی مرضی کا کام شامل کریں|پنهنجي مرضي جو ڪم شامل ڪريو
+Today's Work Summary|آج کے کام کا خلاصہ|اڄ جي ڪم جو خلاصو
+Total procedures|کل پروسیجرز|ڪل پروسيجرز
+Total earnings|کل کمائی|ڪل ڪمائي
+Save Today's Work|آج کا کام محفوظ کریں|اڄ جو ڪم محفوظ ڪريو
+No nursing work added yet.|ابھی کوئی نرسنگ کام شامل نہیں۔|اڃا ڪو نرسنگ ڪم شامل ناهي.
+each|فی عدد|هر هڪ
+added|شامل ہو گیا|شامل ٿيو
+done|مکمل|مڪمل
+Quantity tracking|تعداد کا ریکارڈ|تعداد جو رڪارڊ
+Monthly Attendance|ماہانہ حاضری|مهيني جي حاضري
+Select Month|مہینہ منتخب کریں|مهينو چونڊيو
+Ward / Department|وارڈ / شعبہ|وارڊ / کاتو
+Mark Attendance for Today|آج کی حاضری لگائیں|اڄ جي حاضري لڳايو
+Present|حاضر|حاضر
+Late|تاخیر|دير سان
+Half Day|آدھا دن|اڌ ڏينهن
+Leave|چھٹی|موڪل
+Off Day|آف ڈے|آف ڏينهن
+Absent|غیر حاضر|غير حاضر
+Save Attendance & Ward|حاضری اور وارڈ محفوظ کریں|حاضري ۽ وارڊ محفوظ ڪريو
+Attendance Summary|حاضری کا خلاصہ|حاضري جو خلاصو
+Date-wise Records|تاریخ وار ریکارڈ|تاريخ وار رڪارڊ
+No attendance records for this month.|اس مہینے کی کوئی حاضری نہیں۔|هن مهيني جي ڪا حاضري ناهي.
+Daily History|روزانہ ریکارڈ|روزاني رڪارڊ
+Monthly Summary|ماہانہ خلاصہ|مهيني جو خلاصو
+Download month as CSV|مہینے کی CSV ڈاؤن لوڈ کریں|مهيني جي CSV ڊائونلوڊ ڪريو
+Where you worked|آپ نے کہاں کام کیا|توهان ڪٿي ڪم ڪيو
+No duty started this month.|اس مہینے کوئی ڈیوٹی شروع نہیں ہوئی۔|هن مهيني ڪا ڊيوٽي شروع نه ٿي.
+No saved work records for this month yet.|اس مہینے کا کوئی کام محفوظ نہیں۔|هن مهيني جو ڪو ڪم محفوظ ناهي.
+View details|تفصیل دیکھیں|تفصيل ڏسو
+No start|شروع نہیں|شروع ناهي
+No end|ختم نہیں|ختم ناهي
+procedures|پروسیجرز|پروسيجرز
+Attendance records|حاضری کے اندراجات|حاضري جا اندراج
+Duty hours*|ڈیوٹی کے گھنٹے*|ڊيوٽي جا ڪلاڪ*
+Recorded shifts|درج شدہ شفٹیں|درج ٿيل شفٽون
+Recorded steps|درج شدہ قدم|درج ٿيل قدم
+Distance|فاصلہ|مفاصلو
+days|دن|ڏينهن
+day|دن|ڏينهن
+Not set|مقرر نہیں|مقرر ناهي
+Off|بند|بند
+Not recorded|درج نہیں|درج ناهي
+Total|کل|ڪل
+Total earnings for|کل کمائی برائے|ڪل ڪمائي لاءِ
+Tip|مشورہ|صلاح
+Well done|شاباش|شاباش
+moves|چالیں|چالون
+Moves|چالیں|چالون
+Best|بہترین|بهترين
+Duty already started at|ڈیوٹی پہلے ہی شروع ہوئی تھی|ڊيوٽي اڳ ۾ ئي شروع ٿي هئي
+Duty started|ڈیوٹی شروع ہوئی|ڊيوٽي شروع ٿي
+Duty ended and saved|ڈیوٹی ختم اور محفوظ ہو گئی|ڊيوٽي ختم ۽ محفوظ ٿي وئي
+Please start duty first|پہلے ڈیوٹی شروع کریں|پهرين ڊيوٽي شروع ڪريو
+Select your ward first|پہلے اپنا وارڈ منتخب کریں|پهرين پنهنجو وارڊ چونڊيو
+Core services cannot be removed|بنیادی سروسز ہٹائی نہیں جا سکتیں|بنيادي سروسون هٽائي نٿيون سگهجن
+Enter a work name|کام کا نام لکھیں|ڪم جو نالو لکو
+Custom work added|اپنی مرضی کا کام شامل ہوا|پنهنجي مرضي جو ڪم شامل ٿيو
+Attendance saved|حاضری محفوظ ہو گئی|حاضري محفوظ ٿي وئي
+Today’s work saved|آج کا کام محفوظ ہو گیا|اڄ جو ڪم محفوظ ٿيو
+Settings saved|سیٹنگز محفوظ ہو گئیں|سيٽنگون محفوظ ٿيون
+Profile saved|پروفائل محفوظ ہو گیا|پروفائيل محفوظ ٿيو
+App password updated|ایپ کا پاس ورڈ بدل گیا|ايپ جو پاسورڊ بدلجي ويو
+Use at least 4 characters|کم از کم 4 حروف استعمال کریں|گهٽ ۾ گهٽ 4 اکر استعمال ڪريو
+Backup export started|بیک اپ ایکسپورٹ شروع|بيڪ اپ ايڪسپورٽ شروع
+Enter your name and a password of at least 4 characters|اپنا نام اور کم از کم 4 حروف کا پاس ورڈ لکھیں|پنهنجو نالو ۽ گهٽ ۾ گهٽ 4 اکرن جو پاسورڊ لکو
+Profile created|پروفائل بن گیا|پروفائيل ٺهي ويو
+Incorrect password|پاس ورڈ غلط ہے|پاسورڊ غلط آهي
+Goal updated|ہدف اپڈیٹ ہو گیا|مقصد اپڊيٽ ٿيو
+CSV downloaded|CSV ڈاؤن لوڈ ہو گئی|CSV ڊائونلوڊ ٿي وئي
+Settings & Preferences|سیٹنگز اور ترجیحات|سيٽنگون ۽ ترجيحون
+Earnings & Pricing|کمائی اور قیمتیں|ڪمائي ۽ قيمتون
+Hide all money values when switched off|بند کرنے پر تمام رقوم چھپ جائیں گی|بند ڪرڻ تي سمورا پئسا لڪجي ويندا
+Step Counter|قدم شمار|قدم ڳڻيندڙ
+Optional motion tracking (sensor support required)|اختیاری حرکت ٹریکنگ (سینسر درکار)|اختياري حرڪت ٽريڪنگ (سينسر گهربل)
+Daily Health Tips|روزانہ صحت کے مشورے|روزاني صحت جون صلاحون
+Show wellness card on dashboard|ڈیش بورڈ پر صحت کا کارڈ دکھائیں|ڊيش بورڊ تي صحت جو ڪارڊ ڏيکاريو
+Safety Reminders|حفاظتی یاد دہانیاں|حفاظتي ياد ڏياريندڙ
+Show clinical safety reminders|طبی حفاظتی یاد دہانیاں دکھائیں|ڪلينڪل حفاظتي ياد ڏياريندڙ ڏيکاريو
+Dark mode|ڈارک موڈ|ڊارڪ موڊ
+Easier on the eyes on night shifts|رات کی شفٹ میں آنکھوں کے لیے آسان|رات جي شفٽ ۾ اکين لاءِ آسان
+Daily earning goal (Rs.)|روزانہ کمائی کا ہدف (روپے)|روزاني ڪمائي جو مقصد (روپيا)
+Progress bar on Home|ہوم پر پروگریس بار|گهر تي پروگريس بار
+Open earning entry & procedure rates|کمائی اور پروسیجر ریٹ کھولیں|ڪمائي ۽ پروسيجر ريٽ کوليو
+Close earning entry & procedure rates|کمائی اور پروسیجر ریٹ بند کریں|ڪمائي ۽ پروسيجر ريٽ بند ڪريو
+Procedure Rates (Rs.)|پروسیجر ریٹ (روپے)|پروسيجر ريٽ (روپيا)
+Edit rates only when needed. Tap Save Settings to keep changes.|ریٹ صرف ضرورت پر بدلیں۔ تبدیلیاں رکھنے کے لیے سیٹنگز محفوظ کریں۔|ريٽ رڳو ضرورت وقت بدلايو. تبديليون رکڻ لاءِ سيٽنگون محفوظ ڪريو.
+Remove|ہٹائیں|هٽايو
+Save Settings|سیٹنگز محفوظ کریں|سيٽنگون محفوظ ڪريو
+Profile & Ward|پروفائل اور وارڈ|پروفائيل ۽ وارڊ
+Display Name|ظاہر ہونے والا نام|ڏيکاريل نالو
+Your name|آپ کا نام|توهان جو نالو
+Save Profile|پروفائل محفوظ کریں|پروفائيل محفوظ ڪريو
+Security|سیکیورٹی|سيڪيورٽي
+Create / Change App Password|ایپ کا پاس ورڈ بنائیں / بدلیں|ايپ جو پاسورڊ ٺاهيو / بدلايو
+Set Password|پاس ورڈ لگائیں|پاسورڊ لڳايو
+This offline demo uses a local app lock, not an encrypted account system. Do not store patient-identifying information.|یہ آف لائن ایپ صرف مقامی لاک استعمال کرتی ہے، انکرپٹڈ اکاؤنٹ نہیں۔ مریض کی شناختی معلومات محفوظ نہ کریں۔|هيءَ آف لائن ايپ رڳو مقامي لاڪ استعمال ڪري ٿي، انڪرپٽيڊ اڪائونٽ نه. مريض جي سڃاڻپ واري معلومات محفوظ نه ڪريو.
+About|ایپ کے بارے میں|ايپ بابت
+Nursing Work, Attendance & Wellness Tracker|نرسنگ کام، حاضری اور صحت ٹریکر|نرسنگ ڪم، حاضري ۽ صحت ٽريڪر
+Supporting Better Nursing Practice & Patient Care|بہتر نرسنگ پریکٹس اور مریضوں کی دیکھ بھال میں معاون|بهتر نرسنگ پريڪٽس ۽ مريضن جي سار سنڀال ۾ مددگار
+Export Backup (JSON)|بیک اپ ایکسپورٹ (JSON)|بيڪ اپ ايڪسپورٽ (JSON)
+Clear All App Data|ایپ کا تمام ڈیٹا صاف کریں|ايپ جو سمورو ڊيٽا صاف ڪريو
+Language|زبان|ٻولي
+Show / hide features|فیچرز دکھائیں / چھپائیں|فيچرز ڏيکاريو / لڪايو
+Turn off anything you don’t use. Your saved data stays safe and everything keeps working.|جو فیچر استعمال نہ ہو بند کر دیں۔ آپ کا ڈیٹا محفوظ رہتا ہے اور سب کچھ کام کرتا رہتا ہے۔|جيڪو فيچر استعمال نه ٿئي بند ڪريو. توهان جو ڊيٽا محفوظ رهي ٿو ۽ سڀ ڪجهه ڪم ڪندو رهي ٿو.
+Quick shortcuts|فوری شارٹ کٹس|تڪڙا شارٽ ڪٽس
+History, report, attendance buttons on Home|ہوم پر ہسٹری، رپورٹ، حاضری کے بٹن|گهر تي رڪارڊ، رپورٽ، حاضري جا بٽڻ
+Last 7 days chart|پچھلے 7 دن کا چارٹ|پوئين 7 ڏينهن جو چارٽ
+Procedures chart on Home|ہوم پر پروسیجرز کا چارٹ|گهر تي پروسيجرز جو چارٽ
+Water tracker|پانی ٹریکر|پاڻي ٽريڪر
+Count glasses of water each day|روزانہ پانی کے گلاس گنیں|روزانو پاڻي جا گلاس ڳڻيو
+Show a motivational quote on Home|ہوم پر حوصلہ افزا قول دکھائیں|گهر تي حوصلو ڏيندڙ قول ڏيکاريو
+Memory game|میموری گیم|ميموري راند
+Play|کھیلیں|کيڏيو
+A short break between duties|ڈیوٹیوں کے درمیان مختصر وقفہ|ڊيوٽين جي وچ ۾ ننڍو وقفو
+Memory Match|میموری میچ|ميموري ميچ
+Back|واپس|پوئتي
+Find all 6 pairs. A short break between duties.|تمام 6 جوڑے تلاش کریں۔ ڈیوٹیوں کے درمیان مختصر وقفہ۔|سڀ 6 جوڙا ڳوليو. ڊيوٽين جي وچ ۾ ننڍو وقفو.
+New game|نئی گیم|نئين راند
+General wellness information, not a substitute for clinical advice.|عمومی صحت کی معلومات، طبی مشورے کا متبادل نہیں۔|عام صحت جي معلومات، طبي صلاح جو متبادل نه آهي.
+Nursing Safety & Clinical Guidelines|نرسنگ حفاظت اور کلینیکل رہنما اصول|نرسنگ حفاظت ۽ ڪلينڪل رهنما اصول
+Follow your facility's policies, current clinical guidance and authorized scope of practice.|اپنے ادارے کی پالیسیوں، موجودہ رہنمائی اور مجاز دائرۂ کار پر عمل کریں۔|پنهنجي اداري جي پاليسين، موجوده رهنمائي ۽ مجاز دائري تي عمل ڪريو.
+Medical Ward|میڈیکل وارڈ|ميڊيڪل وارڊ
+Surgical Ward|سرجیکل وارڈ|سرجيڪل وارڊ
+ICU|آئی سی یو|آئي سي يو
+CCU|سی سی یو|سي سي يو
+NICU|این آئی سی یو|اين آئي سي يو
+PICU|پی آئی سی یو|پي آئي سي يو
+Emergency / Casualty|ایمرجنسی / کیژولٹی|ايمرجنسي / ڪئاليٽي
+Operation Theatre (OT)|آپریشن تھیٹر (او ٹی)|آپريشن ٿيٽر (او ٽي)
+Recovery Room|ریکوری روم|ريڪوري روم
+Labour Room|لیبر روم|ليبر روم
+Gynae / Obs Ward|گائنی / او بی ایس وارڈ|گائني / او بي ايس وارڊ
+Paediatric Ward|بچوں کا وارڈ|ٻارن جو وارڊ
+Neonatal Ward|نوزائیدہ بچوں کا وارڈ|نون ڄاول ٻارن جو وارڊ
+Orthopaedic Ward|آرتھوپیڈک وارڈ|آرٿوپيڊڪ وارڊ
+Cardiology Ward|کارڈیالوجی وارڈ|ڪارڊيالوجي وارڊ
+Neurology Ward|نیورولوجی وارڈ|نيورولوجي وارڊ
+Nephrology / Dialysis|نیفرولوجی / ڈائیلاسز|نيفرولوجي / ڊائيليسس
+Urology Ward|یورولوجی وارڈ|يورولوجي وارڊ
+Oncology Ward|آنکالوجی وارڈ|آنڪالوجي وارڊ
+Burns Unit|برنز یونٹ|برنز يونٽ
+Psychiatry Ward|نفسیاتی وارڈ|نفسياتي وارڊ
+Isolation Ward|آئسولیشن وارڈ|آئسوليشن وارڊ
+ENT / Eye Ward|ای این ٹی / آنکھ وارڈ|اي اين ٽي / اکين جو وارڊ
+OPD|او پی ڈی|او پي ڊي
+Private Rooms|پرائیویٹ کمرے|پرائيويٽ ڪمرا
+IV Cannulation|آئی وی کینولیشن|آئي وي ڪينيوليشن
+IV Medication|آئی وی ادویات|آئي وي دوائون
+Medication Administration|ادویات دینا|دوائون ڏيڻ
+Blood Glucose / RBS|بلڈ گلوکوز / آر بی ایس|بلڊ گلوڪوز / آر بي ايس
+Vital Signs|وائٹل سائنز|وائيٽل سائنز
+Wound Dressing|زخم کی ڈریسنگ|زخم جي ڊريسنگ
+Catheterization|کیتھیٹرائزیشن|ڪيٿيٽرائيزيشن
+Urine Sample|پیشاب کا نمونہ|پيشاب جو نمونو
+Nebulization|نیبولائزیشن|نيبولائيزيشن
+NG Tube / Feeding|این جی ٹیوب / فیڈنگ|اين جي ٽيوب / فيڊنگ
+Blood Transfusion|خون کی منتقلی|رت جي منتقلي
+Procedure Assistance|پروسیجر میں معاونت|پروسيجر ۾ مدد
+Patient Care|مریض کی دیکھ بھال|مريض جي سار سنڀال
+Stay hydrated during your shift. Plan water breaks when workload and patient care allow.|شفٹ کے دوران پانی پیتی رہیں۔ کام اور مریضوں کی دیکھ بھال اجازت دے تو پانی کے وقفے رکھیں۔|شفٽ دوران پاڻي پيئندا رهو. ڪم ۽ مريضن جي سار سنڀال اجازت ڏئي ته پاڻي لاءِ وقفا رکو.
+Use appropriate breaks for gentle stretching and movement when safe to do so.|جب محفوظ ہو تو ہلکی ورزش اور حرکت کے لیے مناسب وقفے لیں۔|جڏهن محفوظ هجي ته هلڪي ورزش ۽ حرڪت لاءِ مناسب وقفا وٺو.
+After a demanding shift, prioritize adequate rest and sleep.|مشکل شفٹ کے بعد مناسب آرام اور نیند کو ترجیح دیں۔|ڏکي شفٽ کانپوءِ ڪافي آرام ۽ ننڊ کي ترجيح ڏيو.
+Wear supportive footwear suitable for your clinical environment.|اپنے کام کے ماحول کے مطابق آرام دہ اور سہارا دینے والے جوتے پہنیں۔|پنهنجي ڪم جي ماحول مطابق آرام ڏيندڙ ۽ سهارو ڏيندڙ بوٽ پايو.
+Ask for assistance with patient handling when needed; follow safe moving-and-handling procedures.|مریض کو اٹھانے یا منتقل کرنے میں ضرورت ہو تو مدد مانگیں؛ محفوظ طریقہ اپنائیں۔|مريض کي کڻڻ يا منتقل ڪرڻ ۾ ضرورت هجي ته مدد گهرو؛ محفوظ طريقو اپنايو.
+Hand hygiene|ہاتھوں کی صفائی|هٿن جي صفائي
+Medication safety|ادویات کی حفاظت|دوائن جي حفاظت
+Sharps safety|تیز دھار اوزاروں کی حفاظت|تکين اوزارن جي حفاظت
+Patient monitoring|مریض کی نگرانی|مريض جي نگراني
+Documentation & handover|ریکارڈ اور ہینڈ اوور|رڪارڊ ۽ هينڊ اوور
+PPE & exposure|پی پی ای اور ایکسپوژر|پي پي اي ۽ ايڪسپوژر
+Scope of practice|دائرۂ کار|ڪم جو دائرو
+Perform hand hygiene at the appropriate moments and follow your facility’s infection-prevention policy.|مناسب مواقع پر ہاتھ دھوئیں اور اپنے ادارے کی انفیکشن سے بچاؤ کی پالیسی پر عمل کریں۔|مناسب موقعن تي هٿ ڌوئو ۽ پنهنجي اداري جي انفيڪشن کان بچاءَ جي پاليسي تي عمل ڪريو.
+Verify the correct patient, medicine, dose, route and time; check allergies and clarify unclear orders. Follow local medication policy.|درست مریض، دوا، خوراک، راستہ اور وقت کی تصدیق کریں؛ الرجی دیکھیں اور غیر واضح ہدایات واضح کروائیں۔ ادارے کی دوا پالیسی پر عمل کریں۔|صحيح مريض، دوا، مقدار، رستو ۽ وقت جي تصديق ڪريو؛ الرجي چيڪ ڪريو ۽ غير واضح هدايتون صاف ڪرايو. اداري جي دوا واري پاليسي تي عمل ڪريو.
+Never recap used needles unless an approved procedure specifically requires it. Dispose of sharps immediately in the designated container.|استعمال شدہ سوئیوں کو دوبارہ نہ ڈھکیں جب تک منظور شدہ طریقہ کار اس کا تقاضا نہ کرے۔ تیز دھار اشیا فوراً مخصوص ڈبے میں پھینکیں۔|استعمال ٿيل سُئين کي ٻيهر نه ڍڪيو جيستائين منظور ٿيل طريقو ان جو تقاضا نه ڪري. تکيون شيون فوري مخصوص دٻي ۾ اڇلايو.
+Record observations accurately and promptly escalate concerning changes using your facility’s emergency process.|مشاہدات درست لکھیں اور تشویشناک تبدیلی پر فوراً ادارے کے ایمرجنسی طریقے سے اطلاع دیں۔|مشاهدا صحيح لکو ۽ تشويشناڪ تبديلي تي فوري اداري جي ايمرجنسي طريقي سان اطلاع ڏيو.
+Document care accurately and on time. Share relevant information securely during handover and protect confidentiality.|نگہداشت کا ریکارڈ درست اور بروقت رکھیں۔ ہینڈ اوور میں ضروری معلومات محفوظ طریقے سے دیں اور رازداری برقرار رکھیں۔|سار سنڀال جو رڪارڊ صحيح ۽ وقت تي رکو. هينڊ اوور ۾ ضروري معلومات محفوظ طريقي سان ڏيو ۽ رازداري برقرار رکو.
+Use appropriate PPE. Report needlestick injuries or exposure immediately and follow occupational-health protocol.|مناسب پی پی ای استعمال کریں۔ سوئی لگنے یا ایکسپوژر کی فوراً اطلاع دیں اور ادارے کے پروٹوکول پر عمل کریں۔|مناسب پي پي اي استعمال ڪريو. سُئي لڳڻ يا ايڪسپوژر جي فوري اطلاع ڏيو ۽ اداري جي پروٽوڪول تي عمل ڪريو.
+Perform only procedures for which you are trained and authorized. Follow current policies and clinical supervision.|صرف وہی پروسیجرز کریں جن کی آپ کو تربیت اور اجازت ہو۔ موجودہ پالیسیوں اور نگرانی پر عمل کریں۔|رڳو اهي پروسيجرز ڪريو جن جي توهان کي تربيت ۽ اجازت هجي. موجوده پاليسين ۽ نگراني تي عمل ڪريو.
+If Allah chose this field for you, He saw the ability in you. Don’t give up.|اگر اللہ نے یہ شعبہ آپ کے لیے چنا ہے تو اس نے آپ میں صلاحیت دیکھی ہے۔ ہمت نہ ہاریں۔|جيڪڏهن الله هي شعبو توهان لاءِ چونڊيو آهي ته هن توهان ۾ صلاحيت ڏٺي آهي. همت نه هارايو.
+One step at a time.|ایک وقت میں ایک قدم۔|هڪ وقت ۾ هڪ قدم.
+Not perfect, but progressing.|کامل نہیں، مگر آگے بڑھ رہے ہیں۔|ڪامل نه، پر اڳتي وڌي رهيا آهيون.
+Discipline today, freedom tomorrow.|آج نظم و ضبط، کل آزادی۔|اڄ نظم و ضبط، سڀاڻي آزادي.
+Rest is part of the plan.|آرام بھی منصوبے کا حصہ ہے۔|آرام به منصوبي جو حصو آهي.
+Safe care is not just about procedures — it is about people.|محفوظ نگہداشت صرف پروسیجرز کا نام نہیں — یہ انسانوں کی بات ہے۔|محفوظ سار سنڀال رڳو پروسيجرز جو نالو نه آهي — اها انسانن جي ڳالهه آهي.
+Do your best, then trust Allah (tawakkul).|اپنی پوری کوشش کریں، پھر اللہ پر توکل کریں۔|پنهنجي پوري ڪوشش ڪريو، پوءِ الله تي توڪل ڪريو.`;
+const LD={ur:{},sd:{}};LT.split('\n').forEach(l=>{const[e,u,d]=l.split('|');LD.ur[e]=u;LD.sd[e]=d});
+const PT=[
+[/^Duty already started at (.*)$/,m=>T('Duty already started at')+' '+m[1]],
+[/^(Rs\. [\d,]+) each$/,m=>m[1]+' '+T('each')],
+[/^(\d+)h (\d+)m$/,m=>m[1]+' '+T('hr')+' '+m[2]+' '+T('min')],
+[/^(.+) added$/,m=>T(m[1])+' '+T('added')],
+[/^Total earnings for (.+)$/,m=>T('Total earnings for')+' '+m[1]],
+[/^Total (.+)$/,m=>T('Total')+' '+T(m[1])],
+[/^Tip (\d+)$/,m=>T('Tip')+' '+m[1]],
+[/^([^\p{L}]*)Well done — (\d+) moves$/u,m=>m[1]+T('Well done')+' — '+m[2]+' '+T('moves')]];
+function T(str){const l=db.lang||'en';if(l==='en'||typeof str!=='string')return str;const t=str.trim();if(!t)return str;const d=LD[l],R=x=>str.replace(t,()=>x);
+if(d[t]!==undefined)return R(d[t]);
+for(const[r,f]of PT){const m=t.match(r);if(m)return R(f(m))}
+if(t.includes(' · '))return R(t.split(' · ').map(x=>T(x)).join(' · '));
+const c=t.match(/^([^:]+?):\s+(.+)$/);if(c){const k=T(c[1]),v=T(c[2]);if(k!==c[1]||v!==c[2])return R(k+': '+v)}
+const m=t.match(/^([^\p{L}]*)([\s\S]*?)([^\p{L}.!?)]*)$/u);if(m&&m[2]&&d[m[2]]!==undefined)return R(m[1]+d[m[2]]+m[3]);return str}
+/*T-end*/
+function tx(n){const p=n.parentNode;if(!p||p.nodeName==='SCRIPT'||p.nodeName==='STYLE')return;if(n.__o===undefined||n.nodeValue!==n.__t)n.__o=n.nodeValue;if(p.nodeName==='OPTION'&&!p.hasAttribute('value'))p.setAttribute('value',n.__o.trim());const v=T(n.__o);n.__t=v;if(n.nodeValue!==v)n.nodeValue=v}
+function walk(root){const w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT);let n;while(n=w.nextNode())tx(n);if(root.querySelectorAll)root.querySelectorAll('[placeholder]').forEach(e=>{if(!e.dataset.ph0)e.dataset.ph0=e.getAttribute('placeholder');e.setAttribute('placeholder',T(e.dataset.ph0))})}
+new MutationObserver(ms=>{for(const m of ms)m.addedNodes.forEach(n=>{if(n.nodeType===3)tx(n);else if(n.nodeType===1)walk(n)})}).observe(document.body,{childList:true,subtree:true});
+function setLang(l,init){db.lang=l;if(!init)save();document.documentElement.lang=l;document.documentElement.dir=l==='en'?'ltr':'rtl';walk(document.body);document.querySelectorAll('[data-lang]').forEach(b=>b.classList.toggle('on',b.dataset.lang===l))}
+document.addEventListener('click',e=>{const b=e.target.closest&&e.target.closest('[data-lang]');if(b)setLang(b.dataset.lang)});
+/* ===== feature switches ===== */
+const FD={shortcuts:0,week:1,water:0,quote:0,game:0},FM={shortcuts:'fShortcuts',week:'fWeek',water:'fWater',quote:'fQuote',game:'fGame'};
+const feat=k=>db.settings.feat&&k in db.settings.feat?!!db.settings.feat[k]:!!FD[k];
+function applyFeatures(){for(const k in FM)$(FM[k]).classList.toggle('hidden',!feat(k));const st=!!db.settings.steps;$('todaySteps').parentElement.classList.toggle('hidden',!st);$('todayKm').parentElement.classList.toggle('hidden',!st)}
+const _rd4=renderDash;renderDash=function(){_rd4();applyFeatures()};
+const _rs4=renderSettings;renderSettings=function(){_rs4();document.querySelectorAll('[data-feat]').forEach(i=>i.checked=feat(i.dataset.feat))};
+document.addEventListener('change',e=>{const i=e.target.closest&&e.target.closest('[data-feat]');if(i){db.settings.feat={...(db.settings.feat||{}),[i.dataset.feat]:i.checked};save();applyFeatures()}});
+if('serviceWorker' in navigator && location.protocol!=='blob:'){}load();if(db.profile){$('authName').value=db.profile.name||'';$('authWard').value=db.profile.ward||''}renderDash();renderWork();renderAttendance();renderHistory();renderTips();renderSafety();setLang(db.lang||'en',true);
+</script>
+<script>
+(function(){
+let on=false,smooth=9.8,base=9.8,up=false,last=0,pending=0,seen=false;
+function show(r){try{$('todaySteps').textContent=r.steps;$('todayKm').textContent=r.km+' km'}catch(e){}}
+function step(){const r=dayRecord();r.steps=(Number(r.steps)||0)+1;r.km=+(r.steps*0.00075).toFixed(2);show(r);if(++pending>=10){pending=0;save()}}
+function onMotion(e){
+ const a=e.accelerationIncludingGravity;if(!a||a.x==null)return;seen=true;
+ if(!db.settings.steps)return;
+ const m=Math.sqrt(a.x*a.x+a.y*a.y+a.z*a.z);
+ smooth=smooth*0.7+m*0.3;base=base*0.99+smooth*0.01;
+ const d=smooth-base,now=Date.now();
+ if(!up&&d>1.2&&now-last>300){up=true;last=now;step()}
+ else if(up&&d<0.4){up=false}
+}
+const NP=!!(window.Capacitor&&Capacitor.isNativePlatform&&Capacitor.isNativePlatform());
+let nsub=false,nlast=0;
+function napply(n){const r=dayRecord();r.steps=n;r.km=+(n*0.00075).toFixed(2);show(r);const t=Date.now();if(t-nlast>5000){nlast=t;save()}}
+function permBox(){
+ if(document.getElementById('stepPerm'))return;
+ const b=document.createElement('div');b.id='stepPerm';
+ b.style.cssText='position:fixed;left:10px;right:10px;bottom:10px;z-index:99999;background:#10343a;color:#fff;padding:14px;border-radius:14px;font:14px/1.5 system-ui,sans-serif;box-shadow:0 6px 24px rgba(0,0,0,.35)';
+ const bs='margin:8px 6px 0 0;padding:9px 14px;border:0;border-radius:10px;color:#fff;font-weight:700;';
+ b.innerHTML='<b>Step counter ke liye permission chahiye</b><br>"Physical activity" ki permission allow karo.<br><button id="spAllow" style="'+bs+'background:#0fb5a6">Allow karo</button><button id="spSet" style="'+bs+'background:#2b6cb0">Settings kholo</button><button id="spX" style="'+bs+'background:#355">Band</button>';
+ document.body.appendChild(b);
+ const S=Capacitor.Plugins.Steps;
+ const t=setInterval(async()=>{if(!document.getElementById('stepPerm')){clearInterval(t);return}try{const st=await S.checkPermission();if(st.granted){b.remove();clearInterval(t);startNative()}}catch(e){}},2000);
+ document.getElementById('spAllow').onclick=()=>{b.remove();clearInterval(t);startNative()};
+ document.getElementById('spSet').onclick=()=>S.openSettings();
+ document.getElementById('spX').onclick=()=>{b.remove();clearInterval(t)};
+}
+async function startNative(){
+ const S=Capacitor.Plugins.Steps;
+ try{
+  let st=await S.checkPermission();
+  if(!st.hasSensor)return false;
+  if(!st.granted)st=await S.requestPermission();
+  if(!st.granted){permBox();return true}
+  if(!nsub){nsub=true;S.addListener('steps',e=>napply(e.steps))}
+  const r=await S.start();napply(r.steps);toast('Step counter chal gaya');return true;
+ }catch(e){return false}
+}
+async function start(){
+ if(on)return;
+ if(NP){const ok=await startNative();if(ok){on=true;return}}
+ if(!('DeviceMotionEvent' in window)){toast('Is device mein step sensor nahi mila');return}
+ try{if(typeof DeviceMotionEvent.requestPermission==='function'){const p=await DeviceMotionEvent.requestPermission();if(p!=='granted'){toast('Motion permission allow karein');return}}}catch(e){}
+ window.addEventListener('devicemotion',onMotion);on=true;
+ const r=dayRecord();if(r.steps==null){r.steps=0;r.km=0}show(r);
+ setTimeout(()=>{if(!seen)banner()},3000);
+ try{if('Accelerometer' in window){const ac=new Accelerometer({frequency:30});ac.addEventListener('reading',()=>onMotion({accelerationIncludingGravity:{x:ac.x,y:ac.y,z:ac.z}}));ac.start()}}catch(e){}
+}
+function banner(){
+ if(seen||document.getElementById('stepHelp'))return;
+ const b=document.createElement('div');b.id='stepHelp';
+ b.style.cssText='position:fixed;left:10px;right:10px;bottom:10px;z-index:99999;background:#10343a;color:#fff;padding:14px;border-radius:14px;font:14px/1.5 system-ui,sans-serif;box-shadow:0 6px 24px rgba(0,0,0,.35)';
+ b.innerHTML='<b>Step sensor on nahi hai</b><br>Chrome mein: address bar ke left wala icon (🔒 ya ⚙) dabao → <b>Permissions</b> → <b>Motion sensors → Allow</b>. Phir page reload karo.<br>Ya: Chrome ⋮ → Settings → Site settings → <b>Motion sensors → Allowed</b>.<br>Agar file se khol rahe ho (file:// ya WhatsApp) to sensor nahi chalega, https link ya APK use karo.<br><button id="stepRetry" style="margin:8px 6px 0 0;padding:8px 14px;border:0;border-radius:10px;background:#0fb5a6;color:#fff;font-weight:700">Dobara try</button><button id="stepClose" style="padding:8px 14px;border:0;border-radius:10px;background:#355;color:#fff">Band</button>';
+ document.body.appendChild(b);
+ document.getElementById('stepClose').onclick=()=>b.remove();
+ document.getElementById('stepRetry').onclick=async()=>{b.remove();on=false;window.removeEventListener('devicemotion',onMotion);start()};
+}
+document.addEventListener('visibilitychange',()=>{if(document.hidden&&pending){pending=0;save()}});
+window.addEventListener('pagehide',()=>{if(pending){pending=0;save()}});
+document.getElementById('stepsToggle').addEventListener('change',e=>{if(e.target.checked){db.settings.steps=true;start()}});
+if(db.settings.steps)start();
+})();
+</script>
+</body></html>
